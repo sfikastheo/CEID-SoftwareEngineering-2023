@@ -1,0 +1,126 @@
+<mxfile host="app.diagrams.net" modified="2023-03-27T14:21:45.091Z" agent="Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/111.0" etag="5YPyNqCT8Prm2rsigqge" version="21.1.1" type="device">
+  <diagram name="Page-1" id="DN60gj0aesIvwxuT9a0u">
+    <mxGraphModel dx="2074" dy="2272" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="bhs_hiVhom_8knu4mxhN-8" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="bhs_hiVhom_8knu4mxhN-1" target="bhs_hiVhom_8knu4mxhN-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="bhs_hiVhom_8knu4mxhN-10" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="bhs_hiVhom_8knu4mxhN-1" target="bhs_hiVhom_8knu4mxhN-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="bhs_hiVhom_8knu4mxhN-12" style="edgeStyle=none;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0;entryDx=0;entryDy=0;labelBackgroundColor=default;strokeColor=default;fontFamily=Helvetica;fontSize=11;fontColor=default;endArrow=classic;" edge="1" parent="1" source="bhs_hiVhom_8knu4mxhN-1" target="bhs_hiVhom_8knu4mxhN-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="bhs_hiVhom_8knu4mxhN-15" style="edgeStyle=none;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;labelBackgroundColor=default;strokeColor=default;fontFamily=Helvetica;fontSize=11;fontColor=default;endArrow=classic;" edge="1" parent="1" source="bhs_hiVhom_8knu4mxhN-1" target="bhs_hiVhom_8knu4mxhN-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="bhs_hiVhom_8knu4mxhN-1" value="Χρήστης" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="70" y="220" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="bhs_hiVhom_8knu4mxhN-13" style="edgeStyle=none;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;labelBackgroundColor=default;strokeColor=default;fontFamily=Helvetica;fontSize=11;fontColor=default;endArrow=classic;" edge="1" parent="1" source="bhs_hiVhom_8knu4mxhN-2" target="bhs_hiVhom_8knu4mxhN-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="bhs_hiVhom_8knu4mxhN-18" style="edgeStyle=none;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.421;entryY=0;entryDx=0;entryDy=0;labelBackgroundColor=default;strokeColor=default;fontFamily=Helvetica;fontSize=11;fontColor=default;endArrow=classic;entryPerimeter=0;" edge="1" parent="1" source="bhs_hiVhom_8knu4mxhN-2" target="bhs_hiVhom_8knu4mxhN-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="bhs_hiVhom_8knu4mxhN-23" style="edgeStyle=none;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=default;strokeColor=default;fontFamily=Helvetica;fontSize=11;fontColor=default;endArrow=classic;" edge="1" parent="1" source="bhs_hiVhom_8knu4mxhN-2" target="bhs_hiVhom_8knu4mxhN-22">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="bhs_hiVhom_8knu4mxhN-26" style="edgeStyle=none;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=default;strokeColor=default;fontFamily=Helvetica;fontSize=11;fontColor=default;endArrow=classic;" edge="1" parent="1" source="bhs_hiVhom_8knu4mxhN-2" target="bhs_hiVhom_8knu4mxhN-25">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="bhs_hiVhom_8knu4mxhN-34" style="edgeStyle=none;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=default;strokeColor=default;fontFamily=Helvetica;fontSize=11;fontColor=default;endArrow=classic;" edge="1" parent="1" source="bhs_hiVhom_8knu4mxhN-2" target="bhs_hiVhom_8knu4mxhN-32">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="bhs_hiVhom_8knu4mxhN-40" style="edgeStyle=none;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=1;entryDx=0;entryDy=0;labelBackgroundColor=default;strokeColor=default;fontFamily=Helvetica;fontSize=11;fontColor=default;endArrow=classic;" edge="1" parent="1" source="bhs_hiVhom_8knu4mxhN-2" target="bhs_hiVhom_8knu4mxhN-39">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="bhs_hiVhom_8knu4mxhN-2" value="Ξεναγός" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="70" y="390" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="bhs_hiVhom_8knu4mxhN-17" style="edgeStyle=none;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=default;strokeColor=default;fontFamily=Helvetica;fontSize=11;fontColor=default;endArrow=classic;" edge="1" parent="1" source="bhs_hiVhom_8knu4mxhN-3" target="bhs_hiVhom_8knu4mxhN-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="bhs_hiVhom_8knu4mxhN-24" style="edgeStyle=none;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;labelBackgroundColor=default;strokeColor=default;fontFamily=Helvetica;fontSize=11;fontColor=default;endArrow=classic;" edge="1" parent="1" source="bhs_hiVhom_8knu4mxhN-3" target="bhs_hiVhom_8knu4mxhN-22">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="bhs_hiVhom_8knu4mxhN-30" style="edgeStyle=none;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;labelBackgroundColor=default;strokeColor=default;fontFamily=Helvetica;fontSize=11;fontColor=default;endArrow=classic;" edge="1" parent="1" source="bhs_hiVhom_8knu4mxhN-3" target="bhs_hiVhom_8knu4mxhN-29">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="bhs_hiVhom_8knu4mxhN-3" value="&lt;div&gt;Πολιτιστικός Οργανισμός&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="70" y="560" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="bhs_hiVhom_8knu4mxhN-6" value="Συμμετοχή σε ξενάγηση" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="687" y="220" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="bhs_hiVhom_8knu4mxhN-9" value="Συμμετοχή σε Quiz" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="210" y="-20" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="bhs_hiVhom_8knu4mxhN-11" value="Αναζήτηση εργασίας" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fontColor=default;" vertex="1" parent="1">
+          <mxGeometry x="370" y="310" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="bhs_hiVhom_8knu4mxhN-14" value="Ανάρτηση κριτικών" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fontColor=default;" vertex="1" parent="1">
+          <mxGeometry x="740" y="-80" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="bhs_hiVhom_8knu4mxhN-16" value="Δημιουργία εικονικής ξενάγησης" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fontColor=default;" vertex="1" parent="1">
+          <mxGeometry x="700" y="760" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="bhs_hiVhom_8knu4mxhN-20" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;" style="edgeStyle=none;html=1;startArrow=open;endArrow=none;startSize=12;verticalAlign=bottom;dashed=1;labelBackgroundColor=none;rounded=0;strokeColor=default;fontFamily=Helvetica;fontSize=11;fontColor=default;shape=connector;entryX=0.714;entryY=0.986;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="bhs_hiVhom_8knu4mxhN-16" target="bhs_hiVhom_8knu4mxhN-6">
+          <mxGeometry x="-0.1504" y="-2" width="160" relative="1" as="geometry">
+            <mxPoint x="520" y="560" as="sourcePoint" />
+            <mxPoint x="680" y="560" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bhs_hiVhom_8knu4mxhN-38" style="edgeStyle=none;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=default;strokeColor=default;fontFamily=Helvetica;fontSize=11;fontColor=default;endArrow=classic;" edge="1" parent="1" source="bhs_hiVhom_8knu4mxhN-22" target="bhs_hiVhom_8knu4mxhN-32">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="bhs_hiVhom_8knu4mxhN-22" value="Δημιουργία Event" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fontColor=default;" vertex="1" parent="1">
+          <mxGeometry x="230" y="800" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="bhs_hiVhom_8knu4mxhN-25" value="Δημιουργία Quiz" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fontColor=default;" vertex="1" parent="1">
+          <mxGeometry x="290" y="160" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="bhs_hiVhom_8knu4mxhN-28" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="edgeStyle=none;html=1;endArrow=open;verticalAlign=bottom;dashed=1;labelBackgroundColor=none;rounded=0;strokeColor=default;fontFamily=Helvetica;fontSize=11;fontColor=default;shape=connector;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="bhs_hiVhom_8knu4mxhN-9" target="bhs_hiVhom_8knu4mxhN-25">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="570" y="250" as="sourcePoint" />
+            <mxPoint x="730" y="250" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bhs_hiVhom_8knu4mxhN-29" value="Προσφορά Εργασίας" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fontColor=default;" vertex="1" parent="1">
+          <mxGeometry x="520" y="510" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="bhs_hiVhom_8knu4mxhN-31" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="edgeStyle=none;html=1;endArrow=open;verticalAlign=bottom;dashed=1;labelBackgroundColor=none;rounded=0;strokeColor=default;fontFamily=Helvetica;fontSize=11;fontColor=default;shape=connector;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="bhs_hiVhom_8knu4mxhN-11" target="bhs_hiVhom_8knu4mxhN-29">
+          <mxGeometry x="0.2264" y="-21" width="160" relative="1" as="geometry">
+            <mxPoint x="420" y="490" as="sourcePoint" />
+            <mxPoint x="580" y="490" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bhs_hiVhom_8knu4mxhN-32" value="Έλεγχος κριτικών" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fontColor=default;" vertex="1" parent="1">
+          <mxGeometry x="1010" y="470" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="bhs_hiVhom_8knu4mxhN-33" style="edgeStyle=none;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=1;exitDx=0;exitDy=0;labelBackgroundColor=default;strokeColor=default;fontFamily=Helvetica;fontSize=11;fontColor=default;endArrow=classic;" edge="1" parent="1" source="bhs_hiVhom_8knu4mxhN-6" target="bhs_hiVhom_8knu4mxhN-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="bhs_hiVhom_8knu4mxhN-36" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="edgeStyle=none;html=1;endArrow=open;verticalAlign=bottom;dashed=1;labelBackgroundColor=none;rounded=0;strokeColor=default;fontFamily=Helvetica;fontSize=11;fontColor=default;shape=connector;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="bhs_hiVhom_8knu4mxhN-32" target="bhs_hiVhom_8knu4mxhN-14">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="960" y="400" as="sourcePoint" />
+            <mxPoint x="1120" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bhs_hiVhom_8knu4mxhN-39" value="Ανάρτηση Ξενάγησης" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fontColor=default;" vertex="1" parent="1">
+          <mxGeometry x="580" y="340" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="bhs_hiVhom_8knu4mxhN-41" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="edgeStyle=none;html=1;endArrow=open;verticalAlign=bottom;dashed=1;labelBackgroundColor=none;rounded=0;strokeColor=default;fontFamily=Helvetica;fontSize=11;fontColor=default;shape=connector;exitX=0;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="bhs_hiVhom_8knu4mxhN-6" target="bhs_hiVhom_8knu4mxhN-39">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="530" y="300" as="sourcePoint" />
+            <mxPoint x="690" y="300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
