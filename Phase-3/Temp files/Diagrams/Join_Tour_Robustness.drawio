@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-04-18T10:54:42.174Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/112.0" etag="GEry8t0k8hY9pzUzSIQl" version="21.1.8" type="device">
+<mxfile host="app.diagrams.net" modified="2023-04-18T17:32:21.024Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/112.0" etag="rRGtckQpotk6dS5r6MXP" version="21.1.8" type="device">
   <diagram name="Page-1" id="5rs0R1cW3KDgV_vi_085">
     <mxGraphModel dx="1050" dy="538" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -72,13 +72,11 @@
             <mxPoint x="810" y="260" as="targetPoint" />
           </mxGeometry>
         </mxCell>
+        <mxCell id="lvHPy79Zricmf4AL128w-1" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.186;entryY=0.2;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="Ha74vbjWko5_8-gBTv0f-17" target="Ha74vbjWko5_8-gBTv0f-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="Ha74vbjWko5_8-gBTv0f-17" value="Φόρτωσε" style="ellipse;shape=umlControl;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fontColor=default;" parent="1" vertex="1">
           <mxGeometry x="780" y="170" width="70" height="80" as="geometry" />
-        </mxCell>
-        <mxCell id="Ha74vbjWko5_8-gBTv0f-20" style="edgeStyle=none;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=default;strokeColor=default;fontFamily=Helvetica;fontSize=11;fontColor=default;endArrow=classic;" parent="1" source="Ha74vbjWko5_8-gBTv0f-19" target="Ha74vbjWko5_8-gBTv0f-21" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="920" y="290" as="targetPoint" />
-          </mxGeometry>
         </mxCell>
         <mxCell id="Ha74vbjWko5_8-gBTv0f-19" value="Ξενάγηση" style="ellipse;shape=umlEntity;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fontColor=default;" parent="1" vertex="1">
           <mxGeometry x="905" y="170" width="80" height="80" as="geometry" />
@@ -193,6 +191,9 @@
           <mxGeometry x="-0.5338" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
+        </mxCell>
+        <mxCell id="lvHPy79Zricmf4AL128w-3" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.613;entryY=0.025;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="Ha74vbjWko5_8-gBTv0f-51" target="lvHPy79Zricmf4AL128w-2">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="Ha74vbjWko5_8-gBTv0f-51" value="&lt;div&gt;Στοιχεία&lt;/div&gt;&lt;div&gt;πληρωμής&lt;/div&gt;&lt;div&gt;ΟΚ;&lt;br&gt;&lt;/div&gt;" style="ellipse;shape=umlControl;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fontColor=default;" parent="1" vertex="1">
           <mxGeometry x="180" y="595" width="70" height="80" as="geometry" />
@@ -340,6 +341,9 @@
         </mxCell>
         <mxCell id="Ha74vbjWko5_8-gBTv0f-115" value="Εμφάνισε μήνυμα μη διαθεσιμόητας ατόμων" style="ellipse;shape=umlControl;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fontColor=default;" parent="1" vertex="1">
           <mxGeometry x="680" y="585" width="80" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="lvHPy79Zricmf4AL128w-2" value="Πληρωμή" style="ellipse;shape=umlEntity;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="720" width="80" height="80" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
