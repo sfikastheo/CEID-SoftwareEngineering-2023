@@ -51,8 +51,14 @@
         <mxCell id="2JS95DW83qILI5_Ju0iu-25" value="&lt;b style=&quot;font-size: 20px;&quot;&gt;Πληρωμή / Payment&lt;/b&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=60;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;verticalAlign=middle;fontSize=20;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="-170" y="-167" width="208" height="320" as="geometry" />
         </mxCell>
-        <mxCell id="2JS95DW83qILI5_Ju0iu-26" value="- id: int&lt;br style=&quot;font-size: 20px;&quot;&gt;- user_id: int&lt;br style=&quot;font-size: 20px;&quot;&gt;- product_id: int&lt;br style=&quot;font-size: 20px;&quot;&gt;- amount: float&lt;br style=&quot;font-size: 20px;&quot;&gt;- date: DateTime&lt;br style=&quot;font-size: 20px;&quot;&gt;- receipt_path: String&amp;nbsp;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fontSize=20;" parent="2JS95DW83qILI5_Ju0iu-25" vertex="1">
-          <mxGeometry y="60" width="208" height="170" as="geometry" />
+        <mxCell id="2JS95DW83qILI5_Ju0iu-26" value="- id: int&lt;br style=&quot;font-size: 20px;&quot;&gt;- user_id: int&lt;br style=&quot;font-size: 20px;&quot;&gt;- product_id: int&lt;br style=&quot;font-size: 20px;&quot;&gt;- amount: float&lt;br style=&quot;font-size: 20px;&quot;&gt;- date: DateTime&lt;br style=&quot;font-size: 20px;&quot;&gt;- receipt_path: String&amp;nbsp;&lt;br&gt;&lt;br&gt;+ send_receipt()&lt;br&gt;+ send_certificate()" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fontSize=20;" parent="2JS95DW83qILI5_Ju0iu-25" vertex="1">
+          <mxGeometry y="60" width="208" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="Ab2uwLeFf2xaqaHZ-UJR-0" value="" style="endArrow=none;html=1;rounded=0;exitX=0.007;exitY=0.631;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="2JS95DW83qILI5_Ju0iu-25" source="2JS95DW83qILI5_Ju0iu-26">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="10" y="224" as="sourcePoint" />
+            <mxPoint x="210" y="224" as="targetPoint" />
+          </mxGeometry>
         </mxCell>
         <mxCell id="2JS95DW83qILI5_Ju0iu-31" value="&lt;b style=&quot;font-size: 20px;&quot;&gt;Αγγελία Εργασίας / Job Offer&lt;/b&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fontSize=20;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="1138" y="734" width="205" height="310" as="geometry" />
