@@ -8,14 +8,18 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+
 /**
  * JavaFX App
  */
 public class App extends Application {
     public static Scene scene;
 
+    public static DatabaseConnection currentConnection = new DatabaseConnection();
+    //public static Connection connectDB = currentConnection.getConnection();
+    
     @Override
-    public void start(Stage stage) throws IOException {
+    public void start(Stage stage) throws Exception {
         scene = new Scene(loadFXML("ToursHistoryView"));
         stage.setScene(scene);
         stage.show();

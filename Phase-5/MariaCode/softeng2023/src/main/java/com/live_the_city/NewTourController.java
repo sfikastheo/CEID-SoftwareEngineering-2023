@@ -2,7 +2,17 @@ package com.live_the_city;
 
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.util.Collections;
 import java.util.ResourceBundle;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+
+import javafx.animation.PauseTransition;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
@@ -10,16 +20,19 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ButtonBar;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import javafx.util.Duration;
+
 
 
 public class NewTourController {
-
+//------------ FXML VARIABLES -------------//
     @FXML
     private ResourceBundle resources;
 
@@ -29,6 +42,14 @@ public class NewTourController {
     //--------- New Tour View -----------//
     @FXML
     private AnchorPane NewTourView;
+    @FXML 
+    private Label location_Label;
+    @FXML
+    private Label startHour_Label;
+    @FXML
+    private Label numberOfGroups_Label;
+    @FXML
+    private Label spotsPerGroup_Label;
     @FXML
     private Button toTagsSelect_Button;
     @FXML
@@ -50,13 +71,17 @@ public class NewTourController {
     @FXML
     private TextField starthour_TextField;
     @FXML
-    private TextField endhour_TextField;
-    @FXML
     private Button creategroup_Button;
     @FXML
-    private ListView<String> groups_List;
+    private ListView<LocalDate> datesList;
+    @FXML 
+    private ListView<String> timesList;
+    @FXML
+    private ListView<String> groupsName_List;
     @FXML 
     private TextField price_TextField;
+    @FXML
+    private Label ErrorMessage_Label;
     //-----------TagsSelectView------------//
     @FXML
     private AnchorPane TagsSelectView;
@@ -135,12 +160,15 @@ public class NewTourController {
     @FXML
     private ToggleButton save_ToggleButton;
     
-    //non-FXML Controller variables//
+//-----------NON FXML VARIABLES----------//
     //prev_view anchor pane to go back
     private AnchorPane current_view;
+    private int groups_allowed;
+    private int spotsingroup;
+    private LocalTime startHour; 
+    private int minutes;
 
-
-    //Navigation Functions//
+//---------NAVIGATION METHODS-----------//
     @FXML
     void initialize() {
         current_view =  NewTourView;
@@ -153,7 +181,7 @@ public class NewTourController {
     }
 
     @FXML
-    void show(ActionEvent event) throws IOException{
+    void show() throws IOException{
         current_view.setVisible(false);
         switch (current_view.getId()){
             case "NewTourView":
@@ -186,9 +214,171 @@ public class NewTourController {
                 break; 
         }
     }
+
+//-----------OTHER METHODS-------------//
+    @FXML 
+    public void refreshNewTourView(ActionEvent event){
+        location_Label.setText("Location:");
+        numberOfGroups_Label.setText("Number of groups per day:");
+        spotsPerGroup_Label.setText("Visitors per group:");
+        startHour_Label.setText("Start:");
+        creategroup_Button.setDisable(true);
+    }
+
+    @FXML
+    public void validateTourInfo(ActionEvent event) throws IOException{
+        //check for missing data and show label to user
+        boolean missing_data = title_TextField.getText().isEmpty() || (!virtual_CheckBox.isSelected() && location_TextField.getText().isEmpty()) || price_TextField.getText().isEmpty() || (virtual_CheckBox.isSelected() && duration_TextField.getText().isEmpty());
+        boolean missing_groups = !virtual_CheckBox.isSelected() && datesList.getItems().isEmpty(); 
+
+        //check for missing data
+        if (missing_data){
+            ErrorMessage_Label.setText("There are missing data! Please fill all the fields with the * symbol.");
+            LabelClearTextTransition(ErrorMessage_Label);
+            return;
+        }
+        if (missing_groups) {
+            ErrorMessage_Label.setText("You have no groups for your tour! Please insert the number of groups you have chosen or less.");
+            LabelClearTextTransition(ErrorMessage_Label);
+            return;
+        }
+
+        //check for wrongly formatted data
+        try{
+            Float.valueOf(price_TextField.getText());
+        }catch(Exception e){
+            ErrorMessage_Label.setText("Please insert a valid price for your tour.");
+            LabelClearTextTransition(ErrorMessage_Label);
+            return;
+        }
+
+        if (virtual_CheckBox.isSelected()){
+            try{
+                if (Integer.valueOf(duration_TextField.getText())<=0){
+                    ErrorMessage_Label.setText("Invalid duration for your tour");
+                    LabelClearTextTransition(ErrorMessage_Label);
+                    return;
+                }
+            }catch(Exception e){
+                ErrorMessage_Label.setText("Invalid duration for your tour");
+                LabelClearTextTransition(ErrorMessage_Label);
+                return;
+            }
+        }
+
+        show();
+        loadTags();
+    }
+
+    @FXML
+    public void addGroup(ActionEvent event){
+        LocalDate current_date = dates_DatePicker.getValue();
+
+        //check for missing or invalid date
+        if (current_date == null || current_date.isBefore(LocalDate.now())){
+            ErrorMessage_Label.setText("Please select a valid date for your group.");
+            LabelClearTextTransition(ErrorMessage_Label);
+        }else {
+            LocalTime endHour = startHour;
+            //check for wrongly formed or missing data
+            try{    //groups_number must be an integer
+                groups_allowed = Integer.valueOf(groupsNo_TextField.getText());
+            }catch (Exception e){
+                ErrorMessage_Label.setText("Invalid groups number.");
+                LabelClearTextTransition(ErrorMessage_Label);
+                return;
+            }
+
+            try{    //spots in group must be an integer
+                spotsingroup = Integer.valueOf(pplingroup_TextField.getText());
+            }catch (Exception e){
+                ErrorMessage_Label.setText("Invalid spots in group number.");
+                LabelClearTextTransition(ErrorMessage_Label);
+                return;
+            }
+
+            try {  //startHour must be in LocalTime format
+                startHour = LocalTime.parse(starthour_TextField.getText());
+            }
+            catch(Exception e){
+                ErrorMessage_Label.setText("Invalid start hour. Hours format is hh:mm");
+                LabelClearTextTransition(ErrorMessage_Label);
+                return;
+            }
+
+            try{ //duration must be a positive integer
+                minutes = Integer.valueOf(duration_TextField.getText());
+                endHour = startHour.plusMinutes(minutes);
+                if (!endHour.isAfter(startHour)){
+                    ErrorMessage_Label.setText("Invalid duration for your tour.");
+                    LabelClearTextTransition(ErrorMessage_Label);
+                    return;
+                }
+            }catch(Exception e){
+                ErrorMessage_Label.setText("Duration value incorrectly formed.");
+                LabelClearTextTransition(ErrorMessage_Label);
+                return;
+            }
+
+            if (timesList.getItems().contains(startHour+"-"+endHour)){
+                //added an hour tha already exists
+                ErrorMessage_Label.setText("Group already exists");
+                LabelClearTextTransition(ErrorMessage_Label);
+            }else if(Collections.frequency(datesList.getItems(), current_date) == groups_allowed){
+                //reached group number
+                creategroup_Button.setDisable(true);
+                ErrorMessage_Label.setText("You have reached the maximum number of groups per date you have chosen");
+                LabelClearTextTransition(ErrorMessage_Label);
+            }else{  //insert the dates and time available for the tour, disable buttons for new selection of groups and spots
+                datesList.getItems().add(current_date);
+                timesList.getItems().add(startHour+"-"+ endHour);
+                groupsName_List.getItems().add("Group "+(groupsName_List.getItems().size()+1));
+                if (!groupsNo_TextField.isDisabled() || !pplingroup_TextField.isDisabled()){
+                    duration_TextField.setDisable(true);
+                    groupsNo_TextField.setDisable(true);
+                    pplingroup_TextField.setDisable(true);
+                }
+                
+            }
+            return;
+        }     
+    }
+
+//--------------NON FXML METHODS--------------//
+private void loadTags(){
+    ObservableList<String> tagnames = FXCollections.observableArrayList();
+    String getTags = "Select tagname from Tags;"; 
+    try{
+        Statement statement = DatabaseConnection.getConnection().createStatement();
+        ResultSet tagsSet = statement.executeQuery(getTags);
+
+        while (tagsSet.next()){
+            tagnames.add(tagsSet.getString(1));
+        }
+        tagsSet.close();
+
+    }catch(Exception e){
+        e.printStackTrace();
+    }
+
+    tag1_ToggleButton.setText(tagnames.get(0));
+    tag2_ToggleButton.setText(tagnames.get(1));
+    tag3_ToggleButton.setText(tagnames.get(2));
+    tag4_ToggleButton.setText(tagnames.get(3));
+    //set the rest after you insert more tags!!
     
+}
+
+    private void LabelClearTextTransition(Label o){
+        PauseTransition visibleTextPause = new PauseTransition(
+            Duration.seconds(5)
+            );
+            visibleTextPause.setOnFinished(
+                event -> o.setText("")
+            );
+            visibleTextPause.play();
+    }
     
-     
     
 
 }

@@ -26,7 +26,7 @@
             <Image url="@background.jpg" />
          </image>
       </ImageView>
-      <AnchorPane fx:id="NewTourView" prefHeight="800.0" prefWidth="1280.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane fx:id="NewTourView" prefHeight="800.0" prefWidth="1280.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <AnchorPane prefHeight="86.0" prefWidth="1280.0">
                <children>
@@ -40,7 +40,7 @@
                         <Font name="Script MT Bold" size="35.0" />
                      </font>
                   </Label>
-                  <Button fx:id="toTagsSelect_Button" graphicTextGap="6.0" layoutX="1069.0" layoutY="15.0" mnemonicParsing="false" onAction="#show" prefHeight="63.0" prefWidth="169.0" text="NEXT" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="1069.0" AnchorPane.rightAnchor="42.0" AnchorPane.topAnchor="15.0">
+                  <Button fx:id="toTagsSelect_Button" graphicTextGap="6.0" layoutX="1069.0" layoutY="15.0" mnemonicParsing="false" onAction="#validateTourInfo" prefHeight="63.0" prefWidth="169.0" text="NEXT" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="1069.0" AnchorPane.rightAnchor="42.0" AnchorPane.topAnchor="15.0">
                      <font>
                         <Font name="System Bold" size="26.0" />
                      </font>
@@ -159,12 +159,12 @@
                                     <Font size="16.0" />
                                  </font>
                               </TextField>
-                              <Label prefHeight="32.0" prefWidth="277.0" text="Title:" AnchorPane.bottomAnchor="576.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="907.0" AnchorPane.topAnchor="8.0">
+                              <Label prefHeight="32.0" prefWidth="277.0" text="*Title:" AnchorPane.bottomAnchor="576.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="907.0" AnchorPane.topAnchor="8.0">
                                  <font>
                                     <Font size="20.0" />
                                  </font>
                               </Label>
-                              <CheckBox fx:id="virtual_CheckBox" mnemonicParsing="false" prefHeight="32.0" prefWidth="103.0" text="Virtual" AnchorPane.bottomAnchor="545.0" AnchorPane.leftAnchor="1047.0" AnchorPane.rightAnchor="54.0" AnchorPane.topAnchor="39.0">
+                              <CheckBox fx:id="virtual_CheckBox" mnemonicParsing="false" onAction="#refreshNewTourView" prefHeight="32.0" prefWidth="103.0" text="Virtual" AnchorPane.bottomAnchor="545.0" AnchorPane.leftAnchor="1047.0" AnchorPane.rightAnchor="54.0" AnchorPane.topAnchor="39.0">
                                  <font>
                                     <Font size="20.0" />
                                  </font>
@@ -179,89 +179,86 @@
                                     <Font size="20.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="20.0" layoutY="226.0" prefHeight="32.0" prefWidth="85.0" text="Location:" AnchorPane.bottomAnchor="358.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="1099.0" AnchorPane.topAnchor="226.0">
+                              <Label fx:id="location_Label" layoutX="20.0" layoutY="226.0" prefHeight="32.0" prefWidth="93.0" text="*Location:" AnchorPane.bottomAnchor="358.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="1091.0" AnchorPane.topAnchor="226.0">
                                  <font>
                                     <Font size="20.0" />
                                  </font>
                               </Label>
-                              <TextField fx:id="location_TextField" layoutX="108.0" layoutY="229.0" prefHeight="32.0" prefWidth="585.0" AnchorPane.bottomAnchor="355.0" AnchorPane.leftAnchor="108.0" AnchorPane.rightAnchor="511.0" AnchorPane.topAnchor="229.0">
+                              <TextField fx:id="location_TextField" layoutX="120.0" layoutY="229.0" prefHeight="32.0" prefWidth="614.0" AnchorPane.bottomAnchor="355.0" AnchorPane.leftAnchor="120.0" AnchorPane.rightAnchor="470.0" AnchorPane.topAnchor="229.0">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
                               </TextField>
-                              <Label layoutX="743.0" layoutY="229.0" prefHeight="31.0" prefWidth="206.0" text="Duration (in minutes):" AnchorPane.bottomAnchor="356.0" AnchorPane.leftAnchor="743.0" AnchorPane.rightAnchor="255.0" AnchorPane.topAnchor="229.0">
-                                 <font>
-                                    <Font size="20.0" />
-                                 </font>
-                              </Label>
-                              <TextField fx:id="duration_TextField" alignment="CENTER" layoutX="949.0" layoutY="229.0" prefHeight="32.0" prefWidth="55.0" AnchorPane.bottomAnchor="355.0" AnchorPane.leftAnchor="949.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="229.0">
-                                 <font>
-                                    <Font size="16.0" />
-                                 </font>
-                              </TextField>
-                              <DatePicker fx:id="dates_DatePicker" layoutX="20.0" layoutY="424.0" prefHeight="31.0" prefWidth="243.0" promptText="Select Dates" AnchorPane.bottomAnchor="161.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="941.0" AnchorPane.topAnchor="424.0" />
+                              <DatePicker fx:id="dates_DatePicker" layoutX="20.0" layoutY="439.0" prefHeight="31.0" prefWidth="282.0" promptText="Select Dates" AnchorPane.bottomAnchor="146.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="902.0" AnchorPane.topAnchor="439.0" />
                               <Label layoutX="20.0" layoutY="276.0" prefHeight="43.0" prefWidth="267.0" text="Set a Schedule" AnchorPane.bottomAnchor="297.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="917.0" AnchorPane.topAnchor="276.0">
                                  <font>
                                     <Font name="Script MT Bold" size="41.0" />
                                  </font>
                               </Label>
-                              <ListView fx:id="groups_List" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="21.0" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="508.0" AnchorPane.topAnchor="289.0" />
-                              <Label layoutX="20.0" layoutY="380.0" prefHeight="31.0" prefWidth="175.0" text="Visitors per group:" AnchorPane.bottomAnchor="205.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="1003.0" AnchorPane.topAnchor="380.0">
+                              <ListView fx:id="datesList" layoutX="330.0" layoutY="289.0" prefHeight="306.0" prefWidth="137.0" AnchorPane.bottomAnchor="21.0" AnchorPane.leftAnchor="330.0" AnchorPane.rightAnchor="735.0" AnchorPane.topAnchor="289.0" />
+                              <Label fx:id="spotsPerGroup_Label" layoutX="20.0" layoutY="394.0" prefHeight="31.0" prefWidth="175.0" text="*Visitors per group:" AnchorPane.bottomAnchor="191.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="1003.0" AnchorPane.topAnchor="394.0">
                                  <font>
                                     <Font size="20.0" />
                                  </font>
                               </Label>
-                              <TextField fx:id="pplingroup_TextField" alignment="CENTER" layoutX="209.0" layoutY="379.0" prefHeight="32.0" prefWidth="55.0" text="12">
+                              <TextField fx:id="pplingroup_TextField" alignment="CENTER" layoutX="246.0" layoutY="394.0" prefHeight="32.0" prefWidth="55.0" text="12" AnchorPane.bottomAnchor="187.0" AnchorPane.leftAnchor="246.0" AnchorPane.rightAnchor="903.0" AnchorPane.topAnchor="394.0">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
                               </TextField>
-                              <Label layoutX="20.0" layoutY="337.0" prefHeight="31.0" prefWidth="175.0" text="Number of groups:" AnchorPane.bottomAnchor="248.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="1005.0" AnchorPane.topAnchor="337.0">
+                              <Label fx:id="numberOfGroups_Label" layoutX="20.0" layoutY="332.0" prefHeight="62.0" prefWidth="221.0" text="*Number of groups per day:" wrapText="true" AnchorPane.bottomAnchor="222.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="963.0" AnchorPane.topAnchor="332.0">
                                  <font>
                                     <Font size="20.0" />
                                  </font>
                               </Label>
-                              <TextField fx:id="groupsNo_TextField" alignment="CENTER" layoutX="208.0" layoutY="336.0" prefHeight="32.0" prefWidth="55.0" text="3">
+                              <TextField fx:id="groupsNo_TextField" alignment="CENTER" layoutX="246.0" layoutY="345.0" prefHeight="35.0" prefWidth="64.0" text="3" AnchorPane.leftAnchor="246.0" AnchorPane.rightAnchor="903.0">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
                               </TextField>
-                              <Label layoutX="748.0" layoutY="286.0" prefHeight="43.0" prefWidth="133.0" text="Pricing" AnchorPane.bottomAnchor="287.0" AnchorPane.leftAnchor="748.0" AnchorPane.rightAnchor="323.0" AnchorPane.topAnchor="286.0">
+                              <Label layoutX="775.0" layoutY="286.0" prefHeight="43.0" prefWidth="133.0" text="Pricing" AnchorPane.bottomAnchor="287.0" AnchorPane.leftAnchor="775.0" AnchorPane.rightAnchor="296.0" AnchorPane.topAnchor="286.0">
                                  <font>
                                     <Font name="Script MT Bold" size="41.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="748.0" layoutY="350.0" prefHeight="31.0" prefWidth="293.0" text="Participation Fee / Ticket Price:" AnchorPane.bottomAnchor="235.0" AnchorPane.topAnchor="350.0">
+                              <Label layoutX="775.0" layoutY="350.0" prefHeight="31.0" prefWidth="293.0" text="*Participation Fee / Ticket Price:" AnchorPane.bottomAnchor="235.0" AnchorPane.topAnchor="350.0">
                                  <font>
                                     <Font size="20.0" />
                                  </font>
                               </Label>
-                              <TextField fx:id="price_TextField" alignment="CENTER" layoutX="1031.0" layoutY="354.0" prefHeight="31.0" prefWidth="69.0" AnchorPane.bottomAnchor="231.0" AnchorPane.topAnchor="354.0">
+                              <TextField fx:id="price_TextField" alignment="CENTER" layoutX="1058.0" layoutY="354.0" prefHeight="31.0" prefWidth="69.0" AnchorPane.bottomAnchor="231.0" AnchorPane.topAnchor="354.0">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
                               </TextField>
-                              <Button fx:id="creategroup_Button" layoutX="68.0" layoutY="549.0" mnemonicParsing="false" text="Create Group">
+                              <Button fx:id="creategroup_Button" layoutX="68.0" layoutY="549.0" mnemonicParsing="false" onAction="#addGroup" text="Create Group">
                                  <font>
                                     <Font size="19.0" />
                                  </font>
                               </Button>
-                              <Label layoutX="20.0" layoutY="481.0" prefHeight="31.0" prefWidth="51.0" text="Start:" AnchorPane.bottomAnchor="104.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="1133.0" AnchorPane.topAnchor="481.0">
+                              <Label fx:id="startHour_Label" layoutX="20.0" layoutY="487.0" prefHeight="31.0" prefWidth="62.0" text="*Start:" AnchorPane.bottomAnchor="98.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="1122.0" AnchorPane.topAnchor="487.0">
                                  <font>
                                     <Font size="20.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="155.0" layoutY="482.0" prefHeight="31.0" prefWidth="44.0" text="End:" AnchorPane.bottomAnchor="103.0" AnchorPane.leftAnchor="155.0" AnchorPane.rightAnchor="1005.0" AnchorPane.topAnchor="482.0">
-                                 <font>
-                                    <Font size="20.0" />
-                                 </font>
-                              </Label>
-                              <TextField fx:id="starthour_TextField" alignment="CENTER" layoutX="73.0" layoutY="482.0" prefHeight="32.0" prefWidth="55.0" AnchorPane.bottomAnchor="99.0" AnchorPane.leftAnchor="73.0" AnchorPane.rightAnchor="1076.0" AnchorPane.topAnchor="482.0">
+                              <TextField fx:id="starthour_TextField" alignment="CENTER" layoutX="80.0" layoutY="488.0" prefHeight="35.0" prefWidth="64.0" AnchorPane.bottomAnchor="93.0" AnchorPane.leftAnchor="80.0" AnchorPane.rightAnchor="1060.0" AnchorPane.topAnchor="488.0">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
                               </TextField>
-                              <TextField fx:id="endhour_TextField" alignment="CENTER" layoutX="202.0" layoutY="481.0" prefHeight="32.0" prefWidth="55.0" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="202.0" AnchorPane.rightAnchor="947.0" AnchorPane.topAnchor="481.0">
+                              <Label fx:id="ErrorMessage_Label" alignment="TOP_LEFT" layoutX="762.0" layoutY="424.0" prefHeight="153.0" prefWidth="382.0" textAlignment="JUSTIFY" textFill="RED" wrapText="true">
+                                 <font>
+                                    <Font size="25.0" />
+                                 </font>
+                              </Label>
+                              <ListView fx:id="timesList" layoutX="405.0" layoutY="289.0" prefHeight="306.0" prefWidth="137.0" AnchorPane.bottomAnchor="21.0" AnchorPane.leftAnchor="480.0" AnchorPane.rightAnchor="585.0" AnchorPane.topAnchor="289.0" />
+                              <ListView fx:id="groupsName_List" layoutX="628.0" layoutY="289.0" prefHeight="306.0" prefWidth="89.0" AnchorPane.bottomAnchor="21.0" AnchorPane.leftAnchor="628.0" AnchorPane.rightAnchor="487.0" AnchorPane.topAnchor="289.0" />
+                              <Label layoutX="778.0" layoutY="230.0" prefHeight="31.0" prefWidth="216.0" text="*Duration (in minutes):">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="duration_TextField" alignment="CENTER" layoutX="992.0" layoutY="230.0" prefHeight="35.0" prefWidth="64.0">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
@@ -279,7 +276,7 @@
             </AnchorPane>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="TagsSelectView" prefHeight="800.0" prefWidth="1280.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane fx:id="TagsSelectView" prefHeight="800.0" prefWidth="1280.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <ImageView fitHeight="805.0" fitWidth="1282.0">
                <image>
@@ -418,89 +415,89 @@
                         <Font size="25.0" />
                      </font>
                   </Label>
-                  <ButtonBar fx:id="tagsLine1_ButtonBar" buttonOrder="" layoutX="150.0" layoutY="186.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="83.0" prefWidth="1008.0" AnchorPane.bottomAnchor="429.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="186.0">
+                  <ButtonBar fx:id="tagsLine1_ButtonBar" buttonOrder="" layoutX="150.0" layoutY="139.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="142.0" prefWidth="980.0" AnchorPane.bottomAnchor="417.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="139.0">
                      <buttons>
-                        <ToggleButton fx:id="tag1_ToggleButton" prefHeight="81.0" prefWidth="196.0" text="Tag1">
+                        <ToggleButton fx:id="tag1_ToggleButton" contentDisplay="TOP" prefHeight="160.0" prefWidth="196.0" text="Tag1" textAlignment="CENTER" wrapText="true">
                            <font>
-                              <Font size="25.0" />
+                              <Font size="20.0" />
                            </font>
                         </ToggleButton>
-                        <ToggleButton fx:id="tag2_ToggleButton" prefHeight="81.0" prefWidth="196.0" text="Tag2">
+                        <ToggleButton fx:id="tag2_ToggleButton" contentDisplay="TOP" prefHeight="144.0" prefWidth="196.0" text="Tag2" textAlignment="CENTER" wrapText="true">
                            <font>
-                              <Font size="25.0" />
+                              <Font size="20.0" />
                            </font>
                         </ToggleButton>
-                        <ToggleButton fx:id="tag3_ToggleButton" prefHeight="81.0" prefWidth="196.0" text="Tag3">
+                        <ToggleButton fx:id="tag3_ToggleButton" contentDisplay="TOP" prefHeight="154.0" prefWidth="196.0" text="Tag3" textAlignment="CENTER" wrapText="true">
                            <font>
-                              <Font size="25.0" />
+                              <Font size="20.0" />
                            </font>
                         </ToggleButton>
-                        <ToggleButton fx:id="tag4_ToggleButton" prefHeight="81.0" prefWidth="196.0" text="Tag4" textAlignment="CENTER" textFill="#000000f7" wrapText="true">
+                        <ToggleButton fx:id="tag4_ToggleButton" contentDisplay="TOP" prefHeight="148.0" prefWidth="196.0" text="Tag4" textAlignment="CENTER" textFill="#000000f7" wrapText="true">
                            <font>
-                              <Font size="25.0" />
+                              <Font size="20.0" />
                            </font>
                         </ToggleButton>
-                        <ToggleButton fx:id="tag5_ToggleButton" prefHeight="81.0" prefWidth="196.0" text="Tag5">
+                        <ToggleButton fx:id="tag5_ToggleButton" contentDisplay="TOP" prefHeight="146.0" prefWidth="196.0" text="Tag5" textAlignment="CENTER" wrapText="true">
                            <font>
-                              <Font size="25.0" />
+                              <Font size="20.0" />
                            </font>
                         </ToggleButton>
                      </buttons>
                   </ButtonBar>
-                  <ButtonBar fx:id="tagsLine2_ButtonBar" buttonOrder="" layoutX="150.0" layoutY="286.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="83.0" prefWidth="1008.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="286.0">
+                  <ButtonBar fx:id="tagsLine2_ButtonBar" buttonOrder="" layoutX="150.0" layoutY="290.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="143.0" prefWidth="980.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="290.0">
                      <buttons>
-                        <ToggleButton fx:id="tag6_ToggleButton" prefHeight="81.0" prefWidth="196.0" text="Tag6">
+                        <ToggleButton fx:id="tag6_ToggleButton" contentDisplay="TOP" prefHeight="143.0" prefWidth="196.0" text="Tag6" textAlignment="CENTER" wrapText="true">
                            <font>
-                              <Font size="25.0" />
+                              <Font size="20.0" />
                            </font>
                         </ToggleButton>
-                        <ToggleButton fx:id="tag7_ToggleButton" prefHeight="81.0" prefWidth="196.0" text="Tag7">
+                        <ToggleButton fx:id="tag7_ToggleButton" contentDisplay="TOP" prefHeight="156.0" prefWidth="196.0" text="Tag7" textAlignment="CENTER" wrapText="true">
                            <font>
-                              <Font size="25.0" />
+                              <Font size="20.0" />
                            </font>
                         </ToggleButton>
-                        <ToggleButton fx:id="tag8_ToggleButton" prefHeight="81.0" prefWidth="196.0" text="Tag8">
+                        <ToggleButton fx:id="tag8_ToggleButton" contentDisplay="TOP" prefHeight="142.0" prefWidth="196.0" text="Tag8" textAlignment="CENTER" wrapText="true">
                            <font>
-                              <Font size="25.0" />
+                              <Font size="20.0" />
                            </font>
                         </ToggleButton>
-                        <ToggleButton fx:id="tag9_ToggleButton" prefHeight="81.0" prefWidth="196.0" text="Tag9" textAlignment="CENTER" textFill="#000000f7" wrapText="true">
+                        <ToggleButton fx:id="tag9_ToggleButton" contentDisplay="TOP" prefHeight="157.0" prefWidth="196.0" text="Tag9" textAlignment="CENTER" textFill="#000000f7" wrapText="true">
                            <font>
-                              <Font size="25.0" />
+                              <Font size="20.0" />
                            </font>
                         </ToggleButton>
-                        <ToggleButton fx:id="tag10_ToggleButton" prefHeight="81.0" prefWidth="196.0" text="Tag10">
+                        <ToggleButton fx:id="tag10_ToggleButton" contentDisplay="TOP" prefHeight="156.0" prefWidth="196.0" text="Tag10" textAlignment="CENTER" wrapText="true">
                            <font>
-                              <Font size="25.0" />
+                              <Font size="20.0" />
                            </font>
                         </ToggleButton>
                      </buttons>
                   </ButtonBar>
-                  <ButtonBar fx:id="tagsLine3_ButtonBar" buttonOrder="" layoutX="150.0" layoutY="386.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="83.0" prefWidth="1008.0" AnchorPane.bottomAnchor="229.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="386.0">
+                  <ButtonBar fx:id="tagsLine3_ButtonBar" buttonOrder="" layoutX="150.0" layoutY="442.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="142.0" prefWidth="980.0" AnchorPane.bottomAnchor="114.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="442.0">
                      <buttons>
-                        <ToggleButton fx:id="tag11_ToggleButton" prefHeight="81.0" prefWidth="196.0" text="Tag11">
+                        <ToggleButton fx:id="tag11_ToggleButton" contentDisplay="TOP" prefHeight="146.0" prefWidth="196.0" text="Tag11" textAlignment="CENTER" wrapText="true">
                            <font>
-                              <Font size="25.0" />
+                              <Font size="20.0" />
                            </font>
                         </ToggleButton>
-                        <ToggleButton fx:id="tag12_ToggleButton" prefHeight="81.0" prefWidth="196.0" text="Tag12">
+                        <ToggleButton fx:id="tag12_ToggleButton" contentDisplay="TOP" prefHeight="142.0" prefWidth="196.0" text="Tag12" textAlignment="CENTER" wrapText="true">
                            <font>
-                              <Font size="25.0" />
+                              <Font size="20.0" />
                            </font>
                         </ToggleButton>
-                        <ToggleButton fx:id="tag13_ToggleButton" prefHeight="81.0" prefWidth="196.0" text="Tag13">
+                        <ToggleButton fx:id="tag13_ToggleButton" contentDisplay="TOP" prefHeight="158.0" prefWidth="196.0" text="Tag13" textAlignment="CENTER" wrapText="true">
                            <font>
-                              <Font size="25.0" />
+                              <Font size="20.0" />
                            </font>
                         </ToggleButton>
-                        <ToggleButton fx:id="tag14_ToggleButton" prefHeight="81.0" prefWidth="196.0" text="Tag14" textAlignment="CENTER" textFill="#000000f7" wrapText="true">
+                        <ToggleButton fx:id="tag14_ToggleButton" contentDisplay="TOP" prefHeight="160.0" prefWidth="196.0" text="Tag14" textAlignment="CENTER" textFill="#000000f7" wrapText="true">
                            <font>
-                              <Font size="25.0" />
+                              <Font size="20.0" />
                            </font>
                         </ToggleButton>
-                        <ToggleButton fx:id="tag15_ToggleButton" prefHeight="81.0" prefWidth="196.0" text="Tag15">
+                        <ToggleButton fx:id="tag15_ToggleButton" contentDisplay="TOP" prefHeight="158.0" prefWidth="196.0" text="Tag15" textAlignment="CENTER" wrapText="true">
                            <font>
-                              <Font size="25.0" />
+                              <Font size="20.0" />
                            </font>
                         </ToggleButton>
                      </buttons>

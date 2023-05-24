@@ -1,5 +1,6 @@
 module com.live_the_city {
-    requires javafx.controls;
+    requires transitive java.sql;
+    requires transitive javafx.controls;
     requires javafx.fxml;
     requires transitive javafx.graphics;
 
