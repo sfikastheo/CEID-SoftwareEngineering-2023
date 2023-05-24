@@ -63,6 +63,16 @@ public class Tour {
     public void setTags(List<String> new_tags){
         this.tags = new_tags;
     }
+    public void addTag(String tag){
+        this.tags.add(this.tags.size(), tag);
+    }
+    public void removeTag(String tag){
+        if (this.tags.contains(tag)){
+            int index = this.tags.indexOf(tag);
+            this.tags.remove(index);
+        }
+            
+    }
     
     public boolean getVirtual(){
         return this.virtual;
@@ -116,8 +126,11 @@ public class Tour {
         this.dates_available.add(this.dates_available.size(), new_dt);
     }
     public void removeDateAvailable(LocalDateTime new_dt){
-        if (this.dates_available.contains(new_dt))
-            this.dates_available.remove(new_dt);
+        if (this.dates_available.contains(new_dt)){
+            int index = this.dates_available.indexOf(new_dt);
+            this.dates_available.remove(index);
+        }
+            
     }
 
     public int getGroupsPerDate(){
