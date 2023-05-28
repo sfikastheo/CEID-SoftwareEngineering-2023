@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.live_the_city.MyJobOffersController">
+   <children>
+      <ImageView fitHeight="800.0" fitWidth="1280.0">
+         <image>
+            <Image url="@background.jpg" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="-5.0" layoutY="-1.0" prefHeight="102.0" prefWidth="0.0" AnchorPane.bottomAnchor="698.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="18.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="1206.0" AnchorPane.topAnchor="10.0">
+               <image>
+                  <Image url="@icons/4317634161644666177-128.png" />
+               </image>
+            </ImageView>
+            <Label prefHeight="64.0" prefWidth="338.0" text="Welcome &lt;username&gt;!" AnchorPane.bottomAnchor="18.0" AnchorPane.leftAnchor="80.0" AnchorPane.rightAnchor="862.0" AnchorPane.topAnchor="10.0">
+               <font>
+                  <Font name="Script MT Bold" size="35.0" />
+               </font>
+            </Label>
+            <Button fx:id="Back_Button" contentDisplay="GRAPHIC_ONLY" layoutX="1188.0" layoutY="6.0" mnemonicParsing="false" onAction="#back2home" prefHeight="48.0" prefWidth="48.0" text="Button" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="1180.0" AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="15.0">
+               <graphic>
+                  <ImageView fx:id="back2home" fitHeight="64.0" fitWidth="64.0">
+                     <image>
+                        <Image url="@icons/goback.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </AnchorPane>
+      <Line endX="1057.2928466796875" endY="102.0" layoutX="19.0" layoutY="10.0" startY="101.99998474121094" AnchorPane.bottomAnchor="697.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="101.0">
+         <stroke>
+            <LinearGradient endX="1.0" endY="1.0" startX="0.18009478672985782" startY="0.1706161137440758">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.3106725215911865" green="0.5899732112884521" blue="0.7894737124443054" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.006711409395973154">
+                     <color>
+                        <Color red="0.3106725215911865" green="0.5899732112884521" blue="0.7894737124443054" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.09999590767719752">
+                     <color>
+                        <Color red="0.3156999945640564" green="0.5147266387939453" blue="0.7699999809265137" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.27013422818791943">
+                     <color>
+                        <Color red="0.3375000059604645" green="0.4288392961025238" blue="0.75" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.43081928302504496">
+                     <color>
+                        <Color red="0.4643518626689911" green="0.4420687258243561" blue="0.7763158082962036" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.5884146341463414">
+                     <color>
+                        <Color red="0.542959988117218" green="0.4388999938964844" blue="0.7699999809265137" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.790288917989851">
+                     <color>
+                        <Color red="0.633840024471283" green="0.4408000111579895" blue="0.7599999904632568" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="0.35185185074806213" blue="0.9135802388191223" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </stroke>
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0" startX="0.18009478672985782" startY="0.1706161137440758">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.3106725215911865" green="0.5899732112884521" blue="0.7894737124443054" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.006711409395973154">
+                     <color>
+                        <Color red="0.3106725215911865" green="0.5899732112884521" blue="0.7894737124443054" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.09999590767719752">
+                     <color>
+                        <Color red="0.3156999945640564" green="0.5147266387939453" blue="0.7699999809265137" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.27013422818791943">
+                     <color>
+                        <Color red="0.3375000059604645" green="0.4288392961025238" blue="0.75" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.43081928302504496">
+                     <color>
+                        <Color red="0.4643518626689911" green="0.4420687258243561" blue="0.7763158082962036" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.5884146341463414">
+                     <color>
+                        <Color red="0.542959988117218" green="0.4388999938964844" blue="0.7699999809265137" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.790288917989851">
+                     <color>
+                        <Color red="0.633840024471283" green="0.4408000111579895" blue="0.7599999904632568" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="0.35185185074806213" blue="0.9135802388191223" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Line>
+      <TableView layoutX="78.0" layoutY="120.0" prefHeight="622.0" prefWidth="1107.0" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="80.0" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="120.0">
+        <columns>
+          <TableColumn fx:id="Title_Column" prefWidth="172.0" text="Title" />
+          <TableColumn fx:id="Description_Column" minWidth="0.0" prefWidth="282.0" text="Description" />
+            <TableColumn fx:id="DateOpened_Column" prefWidth="122.0" text="Date Opened" />
+            <TableColumn fx:id="Expires_Column" prefWidth="110.0" text="Expires" />
+            <TableColumn fx:id="NumEmployees_Column" prefWidth="79.0" text="#Employees" />
+            <TableColumn fx:id="Salary_Column" prefWidth="104.0" text="Salary" />
+            <TableColumn fx:id="Tags_Column" prefWidth="171.0" text="Tags" />
+            <TableColumn fx:id="Public_Column" prefWidth="79.0" text="Public" />
+        </columns>
+      </TableView>
+      <Button fx:id="newJobOffer_Button" contentDisplay="GRAPHIC_ONLY" layoutX="1119.0" layoutY="700.0" mnemonicParsing="false" onAction="#createJOffer" prefHeight="48.0" prefWidth="48.0" text="Button" AnchorPane.bottomAnchor="28.0" AnchorPane.leftAnchor="1119.0" AnchorPane.rightAnchor="81.0" AnchorPane.topAnchor="700.0">
+         <graphic>
+            <ImageView fitHeight="64.0" fitWidth="64.0">
+               <image>
+                  <Image url="@icons/new_item.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+   </children>
+</AnchorPane>
