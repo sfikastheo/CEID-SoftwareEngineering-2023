@@ -98,12 +98,12 @@ public class NewEventController {
 
 	}
 
-	void apply_tags(){
+	public void apply_tags(){
 		// Get the selected tags into a list
 		selectedTags = newEvent_tagSelect_choicebox.getValue();
 	}
 
-	void validate_form(){
+	public void validate_form(){
 		// Check if all the text fields are filled
 		// if not display an error message
 		// else display post event view
@@ -126,7 +126,7 @@ public class NewEventController {
 		}
 	}
 
-	private void load_tags(){
+	public void load_tags(){
 		ObservableList<String> tagnames = FXCollections.observableArrayList();
 		String getTags = "Select tagname from Tags;"; 
 		try{
@@ -146,7 +146,7 @@ public class NewEventController {
 		newEvent_tagSelect_choicebox.setItems(tagnames);
 	}
 
-	void LabelClearTextTransition(Label errorLabel){
+	public void LabelClearTextTransition(Label errorLabel){
         PauseTransition visibleTextPause = new PauseTransition(
             Duration.seconds(5)
             );
