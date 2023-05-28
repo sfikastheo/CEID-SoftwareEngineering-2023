@@ -3,12 +3,12 @@ package com.live_the_city;
 import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.regex.Pattern;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
@@ -57,8 +57,6 @@ public class NewTourController {
     private Button toTagsSelect_Button;
     @FXML
     private TextField title_TextField;
-    @FXML
-    private CheckBox virtual_CheckBox;
     @FXML
     private TextArea description_TextArea;
     @FXML
@@ -217,8 +215,8 @@ public class NewTourController {
     @FXML
     public boolean validateTourInfo(ActionEvent event) throws IOException{
         //check for missing data and show label to user
-        boolean missing_data = title_TextField.getText().isEmpty() || (!virtual_CheckBox.isSelected() && location_TextField.getText().isEmpty()) || price_TextField.getText().isEmpty() || (virtual_CheckBox.isSelected() && duration_TextField.getText().isEmpty());
-        boolean missing_groups = !virtual_CheckBox.isSelected() && groupslist.isEmpty(); 
+        boolean missing_data = title_TextField.getText().isEmpty() || location_TextField.getText().isEmpty()|| price_TextField.getText().isEmpty() || duration_TextField.getText().isEmpty();
+        boolean missing_groups = groupslist.isEmpty(); 
 
         //check for missing data
         if (missing_data){
@@ -241,19 +239,18 @@ public class NewTourController {
             return false;
         }
 
-        if (virtual_CheckBox.isSelected()){
-            try{
-                if (Integer.valueOf(duration_TextField.getText())<=0){
-                    ErrorMessage_Label.setText("Invalid duration for your tour");
-                    LabelClearTextTransition(ErrorMessage_Label);
-                    return false;
-                }
-            }catch(Exception e){
+        try{
+            if (Integer.valueOf(duration_TextField.getText())<=0){
                 ErrorMessage_Label.setText("Invalid duration for your tour");
                 LabelClearTextTransition(ErrorMessage_Label);
                 return false;
             }
+        }catch(Exception e){
+            ErrorMessage_Label.setText("Invalid duration for your tour");
+            LabelClearTextTransition(ErrorMessage_Label);
+            return false;
         }
+    
 
         show();
         loadTags();
@@ -310,11 +307,12 @@ public class NewTourController {
                 return;
             }
 
+            Pattern date_regex = Pattern.compile();
             if (!groupslist.isEmpty() && groupslist.contains(current_date+" "+startHour+"-"+endHour)){
-                //added an hour tha already exists
+                //added an hour that already exists
                 ErrorMessage_Label.setText("Group already exists");
                 LabelClearTextTransition(ErrorMessage_Label);
-            }else if(!groupslist.isEmpty() && Collections.frequency(groupslist, current_date.toString()) == groups_allowed){
+            }else if(!groupslist.isEmpty() && Collections.frequency(groupslist, ){
                 //reached group number
                 ErrorMessage_Label.setText("You have reached the maximum number of groups per date you have chosen");
                 LabelClearTextTransition(ErrorMessage_Label);
