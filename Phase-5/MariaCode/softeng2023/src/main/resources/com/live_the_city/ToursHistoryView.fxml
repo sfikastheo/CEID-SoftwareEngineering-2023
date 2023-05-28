@@ -41,7 +41,7 @@
       </AnchorPane>
       <AnchorPane layoutX="72.0" layoutY="110.0" prefHeight="681.0" prefWidth="1116.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="75.0" AnchorPane.rightAnchor="75.0" AnchorPane.topAnchor="95.0">
          <children>
-            <TableView prefHeight="595.0" prefWidth="1130.0" AnchorPane.bottomAnchor="80.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <TableView fx:id="toursTableView" onMouseClicked="#getSelectedTour" prefHeight="595.0" prefWidth="1130.0" AnchorPane.bottomAnchor="80.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
               <columns>
                 <TableColumn prefWidth="234.0" text="Title" />
                   <TableColumn prefWidth="91.0" text="Virtual" />
@@ -62,5 +62,6 @@
             </Button>
          </children>
       </AnchorPane>
+      <Button fx:id="quiztourConnBtn" disable="true" layoutX="75.0" layoutY="728.0" mnemonicParsing="false" onAction="#quizTourConnection" prefHeight="44.0" prefWidth="204.0" text="Connect Quiz with Tour" visible="false" />
    </children>
 </AnchorPane>
