@@ -15,12 +15,12 @@ import java.io.IOException;
 public class App extends Application {
     public static Scene scene;
 
-    public static DatabaseConnection currentConnection = new DatabaseConnection();
+    public static DBcommunicator currentConnection = new DBcommunicator();
     //public static Connection connectDB = currentConnection.getConnection();
     
     @Override
     public void start(Stage stage) throws Exception {
-        scene = new Scene(loadFXML("MyJobOffers"));
+        scene = new Scene(loadFXML("NewTour_all"));
         stage.setScene(scene);
         stage.show();
     }

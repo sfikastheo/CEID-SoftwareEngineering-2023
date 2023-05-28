@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2023-05-24T16:34:12.379Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36" etag="_9GXZUU3uQ0mUPyAj7oT" version="21.3.3" type="device" pages="2">
+<mxfile host="app.diagrams.net" modified="2023-05-28T16:33:58.726Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36" etag="zIwv5i8uBa14_aP3H6lU" version="21.3.4" type="device" pages="2">
   <diagram name="Page-1" id="2YBvvXClWsGukQMizWep">
-    <mxGraphModel dx="880" dy="1552" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1674" dy="1864" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -580,7 +580,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="EvInCkYq03DV5VFkY_d7" name="Page-2">
-    <mxGraphModel dx="880" dy="452" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1154" dy="527" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -668,14 +668,11 @@
             <mxPoint x="88" y="120" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="KvzbCA3LInDABAMQcbhv-22" value="" style="endArrow=classic;html=1;rounded=0;entryX=-0.008;entryY=0.677;entryDx=0;entryDy=0;entryPerimeter=0;fontStyle=1" parent="1" target="KvzbCA3LInDABAMQcbhv-20" edge="1">
+        <mxCell id="KvzbCA3LInDABAMQcbhv-22" value="" style="endArrow=classic;html=1;rounded=0;entryX=-0.008;entryY=0.677;entryDx=0;entryDy=0;entryPerimeter=0;fontStyle=1" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="88" y="160" as="sourcePoint" />
-            <mxPoint x="308" y="150" as="targetPoint" />
+            <mxPoint x="88" y="159" as="sourcePoint" />
+            <mxPoint x="202.92000000000007" y="159.62" as="targetPoint" />
           </mxGeometry>
-        </mxCell>
-        <mxCell id="KvzbCA3LInDABAMQcbhv-23" value="createTour()" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;spacing=0;fontStyle=1" parent="1" vertex="1">
-          <mxGeometry x="93" y="140" width="90" height="20" as="geometry" />
         </mxCell>
         <mxCell id="KvzbCA3LInDABAMQcbhv-24" value="" style="endArrow=classic;html=1;rounded=0;fontStyle=1" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
@@ -709,8 +706,8 @@
         <mxCell id="KvzbCA3LInDABAMQcbhv-29" value="validateTourInfo()" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;spacing=0;fontStyle=1" parent="1" vertex="1">
           <mxGeometry x="348.56" y="240" width="120" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="KvzbCA3LInDABAMQcbhv-30" value="Info is missing" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;spacing=0;spacingTop=0;spacingBottom=0;fontStyle=1" parent="1" vertex="1">
-          <mxGeometry x="253" y="302" width="60" height="30" as="geometry" />
+        <mxCell id="KvzbCA3LInDABAMQcbhv-30" value="Info is missing or wrong" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;spacing=0;spacingTop=0;spacingBottom=0;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="243" y="302" width="83" height="30" as="geometry" />
         </mxCell>
         <mxCell id="KvzbCA3LInDABAMQcbhv-31" value="Alternative" style="text;html=1;strokeColor=default;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;spacing=0;spacingTop=0;spacingBottom=0;fontStyle=1" parent="1" vertex="1">
           <mxGeometry x="240" y="267" width="70" height="30" as="geometry" />
@@ -748,8 +745,8 @@
             <mxPoint x="718" y="523" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="KvzbCA3LInDABAMQcbhv-39" value="showMessage()" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;spacing=0;fontStyle=1" parent="1" vertex="1">
-          <mxGeometry x="343" y="286.5" width="110" height="20" as="geometry" />
+        <mxCell id="KvzbCA3LInDABAMQcbhv-39" value="showMessage(String s)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;spacing=0;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="335" y="285.5" width="150" height="20" as="geometry" />
         </mxCell>
         <mxCell id="KvzbCA3LInDABAMQcbhv-40" value="" style="endArrow=classic;html=1;rounded=0;fontStyle=1" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
@@ -1045,14 +1042,14 @@
         <mxCell id="KvzbCA3LInDABAMQcbhv-116" value=": NewTourController" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" parent="1" vertex="1">
           <mxGeometry x="280" y="35" width="132" height="35" as="geometry" />
         </mxCell>
-        <mxCell id="KvzbCA3LInDABAMQcbhv-117" value="missinginfoMessage" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0" parent="1" vertex="1">
+        <mxCell id="KvzbCA3LInDABAMQcbhv-117" value="ErrorMessage" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0" parent="1" vertex="1">
           <mxGeometry x="424" y="37" width="115" height="30" as="geometry" />
         </mxCell>
         <mxCell id="KvzbCA3LInDABAMQcbhv-118" value="&lt;b&gt;: DBCommunicator&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0" parent="1" vertex="1">
-          <mxGeometry x="544" y="38" width="120" height="30" as="geometry" />
+          <mxGeometry x="544" y="39" width="120" height="30" as="geometry" />
         </mxCell>
         <mxCell id="KvzbCA3LInDABAMQcbhv-119" value="TagsSelectView" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0" parent="1" vertex="1">
-          <mxGeometry x="667.5" y="38.5" width="129" height="30" as="geometry" />
+          <mxGeometry x="667.5" y="39.5" width="129" height="30" as="geometry" />
         </mxCell>
         <mxCell id="KvzbCA3LInDABAMQcbhv-120" value="FilesUploadView" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0" parent="1" vertex="1">
           <mxGeometry x="841" y="41" width="130" height="30" as="geometry" />
