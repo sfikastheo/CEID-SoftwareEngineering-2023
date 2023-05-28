@@ -190,5 +190,7 @@ CONSTRAINT fk_JApp_TourGuide FOREIGN KEY (applicant) REFERENCES TourGuide(tgid) 
 CONSTRAINT fk_JApp_SimUser FOREIGN KEY (applicant) REFERENCES SimpleUser(suid) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
+-- @block
+show tables;
 
 
