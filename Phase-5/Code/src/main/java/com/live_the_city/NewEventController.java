@@ -95,7 +95,7 @@ public class NewEventController {
 	void newEvent_postEvent_button_clicked(){
 		// Post the event to the database
 		// Go back to the Event History view
-		
+
 	}
 
 	void apply_tags(){
@@ -146,7 +146,7 @@ public class NewEventController {
 		newEvent_tagSelect_choicebox.setItems(tagnames);
 	}
 
-	private void LabelClearTextTransition(Label errorLabel){
+	void LabelClearTextTransition(Label errorLabel){
         PauseTransition visibleTextPause = new PauseTransition(
             Duration.seconds(5)
             );
