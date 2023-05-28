@@ -2,7 +2,6 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ButtonBar?>
-<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
@@ -164,11 +163,6 @@
                                     <Font size="20.0" />
                                  </font>
                               </Label>
-                              <CheckBox fx:id="virtual_CheckBox" mnemonicParsing="false" onAction="#refreshNewTourView" prefHeight="32.0" prefWidth="103.0" text="Virtual" AnchorPane.bottomAnchor="545.0" AnchorPane.leftAnchor="1047.0" AnchorPane.rightAnchor="54.0" AnchorPane.topAnchor="39.0">
-                                 <font>
-                                    <Font size="20.0" />
-                                 </font>
-                              </CheckBox>
                               <TextArea fx:id="description_TextArea" prefHeight="110.0" prefWidth="1132.0" promptText="Describe your Tour to the public!" AnchorPane.bottomAnchor="401.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="52.0" AnchorPane.topAnchor="105.0">
                                  <font>
                                     <Font size="16.0" />

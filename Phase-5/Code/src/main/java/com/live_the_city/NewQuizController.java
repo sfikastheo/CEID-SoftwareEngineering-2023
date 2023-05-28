@@ -129,7 +129,6 @@ public class NewQuizController implements Initializable {
 
     }
 
-
     @FXML
     void createQuestion(ActionEvent event) {
         String answer;
@@ -170,7 +169,7 @@ public class NewQuizController implements Initializable {
     @FXML
     void previewQuiz(ActionEvent event) throws IOException {
        
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/quizPreviewScene.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("quizPreviewScene.fxml"));
         Parent root1 = (Parent) fxmlLoader.load();
         Stage stage = new Stage();
         stage.setScene(new Scene(root1));
@@ -185,7 +184,7 @@ public class NewQuizController implements Initializable {
     @FXML
     void viewTours(ActionEvent event) throws IOException {
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/ToursHistoryView.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ToursHistoryView.fxml"));
         Parent root1 = (Parent) fxmlLoader.load();
         Stage stage = new Stage();
         stage.setScene(new Scene(root1));
@@ -196,8 +195,6 @@ public class NewQuizController implements Initializable {
 
     }
 
-
-
     @FXML
     void submitQuiz(ActionEvent event) {
         
@@ -205,7 +202,7 @@ public class NewQuizController implements Initializable {
             //String query = "INSERT INTO Quiz(qid, title, on_tour, descr, date_uploaded) VALUES(null,'"+this.quiz.getTitle()+"','"+ selectedTour+"','"+this.quiz.getDescription()+"', now())";
             //System.out.println(query);
             String query = "INSERT INTO Quiz(qid, title, descr, date_uploaded) VALUES(null,'"+this.quiz.getTitle()+"','"+this.quiz.getDescription()+"', now())";
-            Statement statement = DatabaseConnection.getConnection().createStatement();
+            Statement statement = DBcommunicator.getConnection().createStatement();
             statement.execute(query);
 
             System.out.println("Your Quiz is saved in the database");

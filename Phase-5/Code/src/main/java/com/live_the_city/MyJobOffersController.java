@@ -63,8 +63,7 @@ public class MyJobOffersController {
 
         //close current window
         Stage currentstage = (Stage) newJobOffer_Button.getScene().getWindow();
-        currentstage.close();
-       
+        currentstage.close();       
     }
 
 }

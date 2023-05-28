@@ -130,7 +130,7 @@ public class NewEventController {
 		ObservableList<String> tagnames = FXCollections.observableArrayList();
 		String getTags = "Select tagname from Tags;"; 
 		try{
-			Statement statement = DatabaseConnection.getConnection().createStatement();
+			Statement statement = DBcommunicator.getConnection().createStatement();
 			ResultSet tagsSet = statement.executeQuery(getTags);
 	
 			while (tagsSet.next()){
