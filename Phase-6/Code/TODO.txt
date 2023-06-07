@@ -1,0 +1,4 @@
+1. NewTourController loadTags(): complete the rest Buttontexts after you insert all the Tags.
+2. DBCommunicator for DatabaseConnection.java and Main for App.java in DomainModel-v03
+
+3. DBCommunicator for MyJOffers and ToursHistory

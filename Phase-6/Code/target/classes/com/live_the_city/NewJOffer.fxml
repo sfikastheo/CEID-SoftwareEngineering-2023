@@ -1,0 +1,717 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.live_the_city.NewJOfferController">
+   <children>
+      <ImageView fitHeight="805.0" fitWidth="1282.0">
+         <image>
+            <Image url="@background.jpg" />
+         </image>
+      </ImageView>
+      <AnchorPane fx:id="JobInfoView" prefHeight="200.0" prefWidth="200.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane prefHeight="86.0" prefWidth="1280.0" AnchorPane.bottomAnchor="704.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+                     <image>
+                        <Image url="@icons/4317634161644666177-128.png" />
+                     </image>
+                  </ImageView>
+                  <Label prefHeight="64.0" prefWidth="338.0" text="Welcome &lt;username&gt;!" AnchorPane.leftAnchor="80.0" AnchorPane.topAnchor="10.0">
+                     <font>
+                        <Font name="Script MT Bold" size="35.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="toTagsSelect_Button" graphicTextGap="6.0" layoutX="1069.0" layoutY="15.0" mnemonicParsing="false" onAction="#validateJOfferInfo" prefHeight="63.0" prefWidth="169.0" text="NEXT" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="1069.0" AnchorPane.rightAnchor="42.0" AnchorPane.topAnchor="15.0">
+                     <font>
+                        <Font name="System Bold" size="26.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="55.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icons/next.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <Line endX="1057.2928466796875" endY="102.0" startY="101.99998474121094" AnchorPane.bottomAnchor="697.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="101.0">
+               <stroke>
+                  <LinearGradient endX="1.0" endY="1.0" startX="0.18009478672985782" startY="0.1706161137440758">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.3106725215911865" green="0.5899732112884521" blue="0.7894737124443054" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.006711409395973154">
+                           <color>
+                              <Color red="0.3106725215911865" green="0.5899732112884521" blue="0.7894737124443054" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.09999590767719752">
+                           <color>
+                              <Color red="0.3156999945640564" green="0.5147266387939453" blue="0.7699999809265137" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.27013422818791943">
+                           <color>
+                              <Color red="0.3375000059604645" green="0.4288392961025238" blue="0.75" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.43081928302504496">
+                           <color>
+                              <Color red="0.4643518626689911" green="0.4420687258243561" blue="0.7763158082962036" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.5884146341463414">
+                           <color>
+                              <Color red="0.542959988117218" green="0.4388999938964844" blue="0.7699999809265137" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.790288917989851">
+                           <color>
+                              <Color red="0.633840024471283" green="0.4408000111579895" blue="0.7599999904632568" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="1.0" green="0.35185185074806213" blue="0.9135802388191223" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </stroke>
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0" startX="0.18009478672985782" startY="0.1706161137440758">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.3106725215911865" green="0.5899732112884521" blue="0.7894737124443054" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.006711409395973154">
+                           <color>
+                              <Color red="0.3106725215911865" green="0.5899732112884521" blue="0.7894737124443054" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.09999590767719752">
+                           <color>
+                              <Color red="0.3156999945640564" green="0.5147266387939453" blue="0.7699999809265137" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.27013422818791943">
+                           <color>
+                              <Color red="0.3375000059604645" green="0.4288392961025238" blue="0.75" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.43081928302504496">
+                           <color>
+                              <Color red="0.4643518626689911" green="0.4420687258243561" blue="0.7763158082962036" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.5884146341463414">
+                           <color>
+                              <Color red="0.542959988117218" green="0.4388999938964844" blue="0.7699999809265137" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.790288917989851">
+                           <color>
+                              <Color red="0.633840024471283" green="0.4408000111579895" blue="0.7599999904632568" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="1.0" green="0.35185185074806213" blue="0.9135802388191223" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Line>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="101.0">
+               <children>
+                  <Label layoutX="-41.0" layoutY="3.0" text="Job Information" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="0.0">
+                     <font>
+                        <Font name="Script MT Bold" size="51.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="title_TextField" layoutX="38.0" layoutY="111.0" prefHeight="32.0" prefWidth="718.0" />
+                  <Label layoutX="66.0" layoutY="78.0" prefHeight="32.0" prefWidth="277.0" text="Title:" AnchorPane.leftAnchor="38.0">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="38.0" layoutY="156.0" prefHeight="31.0" prefWidth="285.0" text="Description:" AnchorPane.leftAnchor="38.0">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <TextArea fx:id="description_TextArea" layoutX="38.0" layoutY="193.0" prefHeight="138.0" prefWidth="718.0" />
+                  <TextField fx:id="employer_TextField" layoutX="38.0" layoutY="564.0" prefHeight="32.0" prefWidth="718.0" />
+                  <Label layoutX="38.0" layoutY="533.0" prefHeight="31.0" prefWidth="285.0" text="Employer:">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <ChoiceBox fx:id="type_ChoiceBox" layoutX="166.0" layoutY="357.0" prefHeight="32.0" prefWidth="221.0" />
+                  <Label layoutX="38.0" layoutY="357.0" prefHeight="32.0" prefWidth="71.0" text="Type:">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="811.0" layoutY="193.0" prefHeight="32.0" prefWidth="144.0" text="Compensation:">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="salary_TextField" layoutX="959.0" layoutY="193.0" prefHeight="32.0" prefWidth="208.0" />
+                  <Label fx:id="ErrorMessageLabel" layoutX="807.0" layoutY="422.0" prefHeight="196.0" prefWidth="404.0" textAlignment="CENTER" />
+                  <Label layoutX="811.0" layoutY="295.0" prefHeight="32.0" prefWidth="144.0" text="Expiration Date:">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <DatePicker fx:id="expirationdate_DatePicker" layoutX="960.0" layoutY="295.0" prefHeight="32.0" prefWidth="208.0" />
+                  <Label layoutX="811.0" layoutY="103.0" prefHeight="32.0" prefWidth="221.0" text="Number of Employees:">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="numemployees_TextField" layoutX="1032.0" layoutY="105.0" prefHeight="32.0" prefWidth="71.0" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="TagsSelectView" layoutX="10.0" layoutY="10.0" prefHeight="800.0" prefWidth="1280.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane prefHeight="86.0" prefWidth="1280.0" AnchorPane.bottomAnchor="714.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+                     <image>
+                        <Image url="@icons/4317634161644666177-128.png" />
+                     </image>
+                  </ImageView>
+                  <Label prefHeight="64.0" prefWidth="338.0" text="Welcome &lt;username&gt;!" AnchorPane.leftAnchor="80.0" AnchorPane.topAnchor="10.0">
+                     <font>
+                        <Font name="Script MT Bold" size="35.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="toFilesUpload_Button" graphicTextGap="6.0" layoutX="1069.0" layoutY="15.0" mnemonicParsing="false" onAction="#show" prefHeight="63.0" prefWidth="169.0" text="NEXT" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="1069.0" AnchorPane.rightAnchor="42.0" AnchorPane.topAnchor="15.0">
+                     <font>
+                        <Font name="System Bold" size="26.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="55.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icons/next.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <Line endX="1057.2928466796875" endY="102.0" startY="101.99998474121094" AnchorPane.bottomAnchor="697.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="101.0">
+               <stroke>
+                  <LinearGradient endX="1.0" endY="1.0" startX="0.18009478672985782" startY="0.1706161137440758">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.3106725215911865" green="0.5899732112884521" blue="0.7894737124443054" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.006711409395973154">
+                           <color>
+                              <Color red="0.3106725215911865" green="0.5899732112884521" blue="0.7894737124443054" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.09999590767719752">
+                           <color>
+                              <Color red="0.3156999945640564" green="0.5147266387939453" blue="0.7699999809265137" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.27013422818791943">
+                           <color>
+                              <Color red="0.3375000059604645" green="0.4288392961025238" blue="0.75" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.43081928302504496">
+                           <color>
+                              <Color red="0.4643518626689911" green="0.4420687258243561" blue="0.7763158082962036" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.5884146341463414">
+                           <color>
+                              <Color red="0.542959988117218" green="0.4388999938964844" blue="0.7699999809265137" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.790288917989851">
+                           <color>
+                              <Color red="0.633840024471283" green="0.4408000111579895" blue="0.7599999904632568" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="1.0" green="0.35185185074806213" blue="0.9135802388191223" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </stroke>
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0" startX="0.18009478672985782" startY="0.1706161137440758">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.3106725215911865" green="0.5899732112884521" blue="0.7894737124443054" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.006711409395973154">
+                           <color>
+                              <Color red="0.3106725215911865" green="0.5899732112884521" blue="0.7894737124443054" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.09999590767719752">
+                           <color>
+                              <Color red="0.3156999945640564" green="0.5147266387939453" blue="0.7699999809265137" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.27013422818791943">
+                           <color>
+                              <Color red="0.3375000059604645" green="0.4288392961025238" blue="0.75" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.43081928302504496">
+                           <color>
+                              <Color red="0.4643518626689911" green="0.4420687258243561" blue="0.7763158082962036" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.5884146341463414">
+                           <color>
+                              <Color red="0.542959988117218" green="0.4388999938964844" blue="0.7699999809265137" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.790288917989851">
+                           <color>
+                              <Color red="0.633840024471283" green="0.4408000111579895" blue="0.7599999904632568" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="1.0" green="0.35185185074806213" blue="0.9135802388191223" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Line>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="102.0">
+               <children>
+                  <Label prefHeight="62.0" prefWidth="303.0" text="Choose Tags!" AnchorPane.bottomAnchor="636.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="947.0" AnchorPane.topAnchor="0.0">
+                     <font>
+                        <Font name="Script MT Bold" size="51.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="44.0" layoutY="71.0" prefHeight="36.0" prefWidth="539.0" text="Make it easier for people to find your job offer" AnchorPane.bottomAnchor="591.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="711.0" AnchorPane.topAnchor="71.0">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Label>
+                  <ButtonBar fx:id="tagsLine1_ButtonBar" buttonOrder="" layoutX="150.0" layoutY="139.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="142.0" prefWidth="980.0" AnchorPane.bottomAnchor="417.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="139.0">
+                     <buttons>
+                        <ToggleButton fx:id="tag1_ToggleButton" contentDisplay="TOP" prefHeight="160.0" prefWidth="196.0" text="Tag1" textAlignment="CENTER" wrapText="true">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </ToggleButton>
+                        <ToggleButton fx:id="tag2_ToggleButton" contentDisplay="TOP" prefHeight="144.0" prefWidth="196.0" text="Tag2" textAlignment="CENTER" wrapText="true">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </ToggleButton>
+                        <ToggleButton fx:id="tag3_ToggleButton" contentDisplay="TOP" prefHeight="154.0" prefWidth="196.0" text="Tag3" textAlignment="CENTER" wrapText="true">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </ToggleButton>
+                        <ToggleButton fx:id="tag4_ToggleButton" contentDisplay="TOP" prefHeight="148.0" prefWidth="196.0" text="Tag4" textAlignment="CENTER" textFill="#000000f7" wrapText="true">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </ToggleButton>
+                        <ToggleButton fx:id="tag5_ToggleButton" contentDisplay="TOP" prefHeight="146.0" prefWidth="196.0" text="Tag5" textAlignment="CENTER" wrapText="true">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </ToggleButton>
+                     </buttons>
+                  </ButtonBar>
+                  <ButtonBar fx:id="tagsLine2_ButtonBar" buttonOrder="" layoutX="150.0" layoutY="290.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="143.0" prefWidth="980.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="290.0">
+                     <buttons>
+                        <ToggleButton fx:id="tag6_ToggleButton" contentDisplay="TOP" prefHeight="143.0" prefWidth="196.0" text="Tag6" textAlignment="CENTER" wrapText="true">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </ToggleButton>
+                        <ToggleButton fx:id="tag7_ToggleButton" contentDisplay="TOP" prefHeight="156.0" prefWidth="196.0" text="Tag7" textAlignment="CENTER" wrapText="true">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </ToggleButton>
+                        <ToggleButton fx:id="tag8_ToggleButton" contentDisplay="TOP" prefHeight="142.0" prefWidth="196.0" text="Tag8" textAlignment="CENTER" wrapText="true">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </ToggleButton>
+                        <ToggleButton fx:id="tag9_ToggleButton" contentDisplay="TOP" prefHeight="157.0" prefWidth="196.0" text="Tag9" textAlignment="CENTER" textFill="#000000f7" wrapText="true">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </ToggleButton>
+                        <ToggleButton fx:id="tag10_ToggleButton" contentDisplay="TOP" prefHeight="156.0" prefWidth="196.0" text="Tag10" textAlignment="CENTER" wrapText="true">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </ToggleButton>
+                     </buttons>
+                  </ButtonBar>
+                  <ButtonBar fx:id="tagsLine3_ButtonBar" buttonOrder="" layoutX="150.0" layoutY="442.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="142.0" prefWidth="980.0" AnchorPane.bottomAnchor="114.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="442.0">
+                     <buttons>
+                        <ToggleButton fx:id="tag11_ToggleButton" contentDisplay="TOP" prefHeight="146.0" prefWidth="196.0" text="Tag11" textAlignment="CENTER" wrapText="true">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </ToggleButton>
+                        <ToggleButton fx:id="tag12_ToggleButton" contentDisplay="TOP" prefHeight="142.0" prefWidth="196.0" text="Tag12" textAlignment="CENTER" wrapText="true">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </ToggleButton>
+                        <ToggleButton fx:id="tag13_ToggleButton" contentDisplay="TOP" prefHeight="158.0" prefWidth="196.0" text="Tag13" textAlignment="CENTER" wrapText="true">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </ToggleButton>
+                        <ToggleButton fx:id="tag14_ToggleButton" contentDisplay="TOP" prefHeight="160.0" prefWidth="196.0" text="Tag14" textAlignment="CENTER" textFill="#000000f7" wrapText="true">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </ToggleButton>
+                        <ToggleButton fx:id="tag15_ToggleButton" contentDisplay="TOP" prefHeight="158.0" prefWidth="196.0" text="Tag15" textAlignment="CENTER" wrapText="true">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </ToggleButton>
+                     </buttons>
+                  </ButtonBar>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="FilesUploadView" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane prefHeight="86.0" prefWidth="1280.0">
+               <children>
+                  <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+                     <image>
+                        <Image url="@icons/4317634161644666177-128.png" />
+                     </image>
+                  </ImageView>
+                  <Label prefHeight="64.0" prefWidth="338.0" text="Welcome &lt;username&gt;!" AnchorPane.leftAnchor="80.0" AnchorPane.topAnchor="10.0">
+                     <font>
+                        <Font name="Script MT Bold" size="35.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="toPublish_Button" graphicTextGap="6.0" layoutX="1069.0" layoutY="15.0" mnemonicParsing="false" onAction="#checkFileSize" prefHeight="63.0" prefWidth="169.0" text="NEXT" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="1069.0" AnchorPane.rightAnchor="42.0" AnchorPane.topAnchor="15.0">
+                     <font>
+                        <Font name="System Bold" size="26.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="55.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icons/next.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <Line endX="1057.2928466796875" endY="102.0" startY="101.99998474121094" AnchorPane.bottomAnchor="697.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="101.0">
+               <stroke>
+                  <LinearGradient endX="1.0" endY="1.0" startX="0.18009478672985782" startY="0.1706161137440758">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.3106725215911865" green="0.5899732112884521" blue="0.7894737124443054" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.006711409395973154">
+                           <color>
+                              <Color red="0.3106725215911865" green="0.5899732112884521" blue="0.7894737124443054" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.09999590767719752">
+                           <color>
+                              <Color red="0.3156999945640564" green="0.5147266387939453" blue="0.7699999809265137" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.27013422818791943">
+                           <color>
+                              <Color red="0.3375000059604645" green="0.4288392961025238" blue="0.75" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.43081928302504496">
+                           <color>
+                              <Color red="0.4643518626689911" green="0.4420687258243561" blue="0.7763158082962036" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.5884146341463414">
+                           <color>
+                              <Color red="0.542959988117218" green="0.4388999938964844" blue="0.7699999809265137" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.790288917989851">
+                           <color>
+                              <Color red="0.633840024471283" green="0.4408000111579895" blue="0.7599999904632568" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="1.0" green="0.35185185074806213" blue="0.9135802388191223" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </stroke>
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0" startX="0.18009478672985782" startY="0.1706161137440758">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.3106725215911865" green="0.5899732112884521" blue="0.7894737124443054" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.006711409395973154">
+                           <color>
+                              <Color red="0.3106725215911865" green="0.5899732112884521" blue="0.7894737124443054" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.09999590767719752">
+                           <color>
+                              <Color red="0.3156999945640564" green="0.5147266387939453" blue="0.7699999809265137" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.27013422818791943">
+                           <color>
+                              <Color red="0.3375000059604645" green="0.4288392961025238" blue="0.75" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.43081928302504496">
+                           <color>
+                              <Color red="0.4643518626689911" green="0.4420687258243561" blue="0.7763158082962036" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.5884146341463414">
+                           <color>
+                              <Color red="0.542959988117218" green="0.4388999938964844" blue="0.7699999809265137" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.790288917989851">
+                           <color>
+                              <Color red="0.633840024471283" green="0.4408000111579895" blue="0.7599999904632568" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="1.0" green="0.35185185074806213" blue="0.9135802388191223" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Line>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="102.0">
+               <children>
+                  <Label layoutX="28.0" layoutY="23.0" text="Upload Files" AnchorPane.bottomAnchor="636.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="947.0" AnchorPane.topAnchor="0.0">
+                     <font>
+                        <Font name="Script MT Bold" size="51.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="upload_Button" layoutX="902.0" layoutY="176.0" mnemonicParsing="false" onAction="#uploadFile" prefHeight="81.0" prefWidth="221.0" text="Upload Files">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Button>
+                  <ListView fx:id="uploadedfiles_ListView" layoutX="42.0" layoutY="121.0" prefHeight="454.0" prefWidth="718.0" AnchorPane.bottomAnchor="123.0" />
+                  <Label fx:id="invalidFsize_Label" layoutX="824.0" layoutY="348.0" prefHeight="227.0" prefWidth="392.0" textFill="RED" wrapText="true" AnchorPane.bottomAnchor="123.0" AnchorPane.leftAnchor="824.0" AnchorPane.rightAnchor="64.0" AnchorPane.topAnchor="348.0">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="PublishJOfferView" layoutX="10.0" layoutY="10.0" prefHeight="800.0" prefWidth="1280.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane prefHeight="86.0" prefWidth="1280.0">
+               <children>
+                  <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+                     <image>
+                        <Image url="@icons/4317634161644666177-128.png" />
+                     </image>
+                  </ImageView>
+                  <Label prefHeight="64.0" prefWidth="338.0" text="Welcome &lt;username&gt;!" AnchorPane.leftAnchor="80.0" AnchorPane.topAnchor="10.0">
+                     <font>
+                        <Font name="Script MT Bold" size="35.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="complete_Button" graphicTextGap="6.0" layoutX="1001.0" layoutY="15.0" mnemonicParsing="false" onAction="#publicize" prefHeight="73.0" prefWidth="237.0" text="COMPLETE" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="1001.0" AnchorPane.rightAnchor="42.0" AnchorPane.topAnchor="15.0">
+                     <font>
+                        <Font name="System Bold" size="26.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="55.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icons/next.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <Line endX="1057.2928466796875" endY="102.0" layoutX="100.0" startY="101.99998474121094" AnchorPane.bottomAnchor="697.2928924560547" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="101.29287719726562">
+               <stroke>
+                  <LinearGradient endX="1.0" endY="1.0" startX="0.18009478672985782" startY="0.1706161137440758">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.3106725215911865" green="0.5899732112884521" blue="0.7894737124443054" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.006711409395973154">
+                           <color>
+                              <Color red="0.3106725215911865" green="0.5899732112884521" blue="0.7894737124443054" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.09999590767719752">
+                           <color>
+                              <Color red="0.3156999945640564" green="0.5147266387939453" blue="0.7699999809265137" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.27013422818791943">
+                           <color>
+                              <Color red="0.3375000059604645" green="0.4288392961025238" blue="0.75" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.43081928302504496">
+                           <color>
+                              <Color red="0.4643518626689911" green="0.4420687258243561" blue="0.7763158082962036" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.5884146341463414">
+                           <color>
+                              <Color red="0.542959988117218" green="0.4388999938964844" blue="0.7699999809265137" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.790288917989851">
+                           <color>
+                              <Color red="0.633840024471283" green="0.4408000111579895" blue="0.7599999904632568" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="1.0" green="0.35185185074806213" blue="0.9135802388191223" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </stroke>
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0" startX="0.18009478672985782" startY="0.1706161137440758">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.3106725215911865" green="0.5899732112884521" blue="0.7894737124443054" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.006711409395973154">
+                           <color>
+                              <Color red="0.3106725215911865" green="0.5899732112884521" blue="0.7894737124443054" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.09999590767719752">
+                           <color>
+                              <Color red="0.3156999945640564" green="0.5147266387939453" blue="0.7699999809265137" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.27013422818791943">
+                           <color>
+                              <Color red="0.3375000059604645" green="0.4288392961025238" blue="0.75" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.43081928302504496">
+                           <color>
+                              <Color red="0.4643518626689911" green="0.4420687258243561" blue="0.7763158082962036" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.5884146341463414">
+                           <color>
+                              <Color red="0.542959988117218" green="0.4388999938964844" blue="0.7699999809265137" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.790288917989851">
+                           <color>
+                              <Color red="0.633840024471283" green="0.4408000111579895" blue="0.7599999904632568" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="1.0" green="0.35185185074806213" blue="0.9135802388191223" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Line>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="102.0">
+               <children>
+                  <Label layoutX="232.0" layoutY="93.0" prefHeight="62.0" prefWidth="816.0" text="Do you want to publish your new Job Offer?" textAlignment="CENTER" textOverrun="LEADING_WORD_ELLIPSIS" AnchorPane.bottomAnchor="543.0" AnchorPane.leftAnchor="180.0" AnchorPane.rightAnchor="180.0" AnchorPane.topAnchor="93.0">
+                     <font>
+                        <Font name="Script MT Bold" size="51.0" />
+                     </font>
+                  </Label>
+                  <ToggleButton fx:id="publish_ToggleButton" layoutX="327.0" layoutY="240.0" mnemonicParsing="false" prefHeight="235.0" prefWidth="263.0" text="Yes, the Offer is ready to go public!" textAlignment="CENTER" wrapText="true" AnchorPane.bottomAnchor="223.0" AnchorPane.leftAnchor="327.0" AnchorPane.rightAnchor="690.0" AnchorPane.topAnchor="240.0">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </ToggleButton>
+                  <ToggleButton fx:id="save_ToggleButton" layoutX="698.0" layoutY="240.0" mnemonicParsing="false" prefHeight="235.0" prefWidth="263.0" text="No, I want to edit later!" textAlignment="CENTER" wrapText="true" AnchorPane.bottomAnchor="223.0" AnchorPane.topAnchor="240.0">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </ToggleButton>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

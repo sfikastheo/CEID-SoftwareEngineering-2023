@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.live_the_city.HomePageController">
+   <children>
+      <ImageView fitHeight="805.0" fitWidth="1282.0" layoutX="-1.0">
+         <image>
+            <Image url="@background.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="153.0" fitWidth="130.0" layoutX="293.0" layoutY="178.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="293.0" AnchorPane.topAnchor="178.0">
+         <image>
+            <Image url="@icons/4317634161644666177-128.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="welcome_Label" layoutX="431.0" layoutY="194.0" prefHeight="99.0" prefWidth="559.0" text="Welcome &lt;username&gt;!" AnchorPane.leftAnchor="431.0" AnchorPane.topAnchor="194.0">
+         <font>
+            <Font name="Script MT Bold" size="59.0" />
+         </font>
+      </Label>
+      <Button fx:id="createTour_Button" contentDisplay="TOP" layoutX="256.0" layoutY="337.0" mnemonicParsing="false" onAction="#CreateTourUseCase" prefHeight="99.0" prefWidth="186.0" text="Create Tour">
+         <font>
+            <Font size="20.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="50.0" fitWidth="50.0">
+               <image>
+                  <Image url="@icons/road.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="createEvent_Button" contentDisplay="TOP" layoutX="451.0" layoutY="337.0" mnemonicParsing="false" prefHeight="99.0" prefWidth="186.0" text="Create Event">
+         <font>
+            <Font size="20.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="50.0" fitWidth="50.0">
+               <image>
+                  <Image url="@icons/event-consert-color.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="joinTour_Button" contentDisplay="TOP" layoutX="646.0" layoutY="337.0" mnemonicParsing="false" prefHeight="99.0" prefWidth="186.0" text="Join Tour">
+         <font>
+            <Font size="20.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="50.0" fitWidth="50.0">
+               <image>
+                  <Image url="@icons/backpack.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="joinEvent_Button" contentDisplay="TOP" layoutX="839.0" layoutY="337.0" mnemonicParsing="false" prefHeight="99.0" prefWidth="186.0" text="Join Event">
+         <font>
+            <Font size="20.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="50.0" fitWidth="50.0">
+               <image>
+                  <Image url="@icons/event-partyhat-colorful.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="createQuiz_Button" contentDisplay="TOP" layoutX="261.0" layoutY="455.0" mnemonicParsing="false" prefHeight="99.0" prefWidth="186.0" text="Create Quiz">
+         <font>
+            <Font size="20.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="50.0" fitWidth="50.0">
+               <image>
+                  <Image url="@icons/quiz2.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="apply4Job_Button" contentDisplay="TOP" layoutX="456.0" layoutY="455.0" mnemonicParsing="false" prefHeight="99.0" prefWidth="186.0" text="Apply for Job">
+         <font>
+            <Font size="20.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="50.0" fitWidth="50.0">
+               <image>
+                  <Image url="@icons/job2.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="offerJob_Button" contentDisplay="TOP" layoutX="649.0" layoutY="455.0" mnemonicParsing="false" onAction="#JobOfferUseCase" prefHeight="99.0" prefWidth="186.0" text="Offer a Job">
+         <font>
+            <Font size="20.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="50.0" fitWidth="50.0">
+               <image>
+                  <Image url="@icons/job-offer-color.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="createVirtualTour_Button" layoutX="845.0" layoutY="455.0" mnemonicParsing="false" prefHeight="99.0" prefWidth="186.0" text="Create Virtual Tour" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="20.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="50.0" fitWidth="50.0">
+               <image>
+                  <Image url="@icons/compass.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="exit_Button" contentDisplay="TOP" layoutX="556.0" layoutY="576.0" mnemonicParsing="false" onAction="#exitApp" prefHeight="99.0" prefWidth="186.0" text="Exit">
+         <font>
+            <Font size="20.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="50.0" fitWidth="50.0">
+               <image>
+                  <Image url="@icons/exit.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+   </children>
+</AnchorPane>

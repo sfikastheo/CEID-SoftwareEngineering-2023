@@ -1,0 +1,12 @@
+1) FIX SEQUENCE: note that DBCommunicator always exists, but we only show him as active when it recieves/sends messages
+2) ADD BUTTONS FUNCTIONALITY ON HOME PAGE
+3) FIX CLASS DIAGRAM
+4) ENRICH TEAM PLAN
+
+
+NOTES:
+1) known exceptions in Maria's Code: 
+	-> observable lists can't read some attribute fields so we commented those out.
+	-> cancelling file upload throws exception (ignore it).
+
+2) I updated my sequence in phase 5 by accident and copied the new versions here. I'm sorry :(
