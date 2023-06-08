@@ -6,6 +6,8 @@ import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -58,7 +60,6 @@ public class HomePageController {
             joinTour_Button.setDisable(true);
             joinEvent_Button.setDisable(true);
             apply4Job_Button.setDisable(true);
-            createQuiz_Button.setDisable(true);
         }
 
     }
@@ -88,6 +89,37 @@ public class HomePageController {
     @FXML
     void exitApp(ActionEvent event){
         System.exit(0);
+    }
+
+    @FXML
+    void createQuiz_useCase(ActionEvent event) throws IOException {
+
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("newQuizScene.fxml"));
+        Parent root1 = (Parent) fxmlLoader.load();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root1));
+        stage.show();
+        NewQuizController nqc  = fxmlLoader.getController();
+        nqc.set_nqController(nqc);
+        System.out.println(nqc);
+
+        Stage currentstage = (Stage) createQuiz_Button.getScene().getWindow();
+        currentstage.close();
+
+    }
+
+
+    @FXML
+    void jobApplication_useCase(ActionEvent event) throws IOException {
+        
+        App.scene = new Scene(App.loadFXML("jobOfferListView"));
+        Stage secondaryStage = new Stage();
+        secondaryStage.setScene(App.scene);
+        secondaryStage.show();
+
+        Stage currentstage = (Stage) offerJob_Button.getScene().getWindow();
+        currentstage.close();
+
     }
 
 }

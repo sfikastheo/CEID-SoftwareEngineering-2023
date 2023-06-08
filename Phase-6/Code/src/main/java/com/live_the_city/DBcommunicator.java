@@ -10,7 +10,7 @@ public class DBcommunicator {
     public DBcommunicator(){
         String databaseName = "LIVE_THE_CITY_SEPR2023";
         String databaseUser = "root";
-        String databasePassword = "maria";
+        String databasePassword = "";
         
         try {
             databaseLink = DriverManager.getConnection("jdbc:mariadb://localhost:3306/" + databaseName + "?user=" + databaseUser + "&password=" + databasePassword);

@@ -107,11 +107,11 @@ title VARCHAR(100) NOT NULL,
 on_tour INT NOT NULL,
 descr VARCHAR(200),
 succes_point TINYINT(2),
-qpath VARCHAR(250),
 date_uploaded DATETIME DEFAULT NOW(),
 PRIMARY KEY (qid),
 CONSTRAINT fk_quiz_tour FOREIGN KEY (on_tour) REFERENCES Tour(id) ON DELETE CASCADE ON UPDATE CASCADE 
 );
+
 
 CREATE OR REPLACE TABLE QuizQuestion(
 id INT NOT NULL AUTO_INCREMENT,
@@ -169,10 +169,11 @@ num_employees TINYINT DEFAULT 1,
 salary FLOAT(6,2) NOT NULL,
 files_path VARCHAR(250) NOT NULL,
 public BOOLEAN DEFAULT 0,
-type enum('Full-Time', 'Part-Time'),
+type enum('Full-Time', 'Part-Time') DEFAULT 'Full-Time',
 PRIMARY KEY (id),
 CONSTRAINT fk_joffer_host FOREIGN KEY (employer) REFERENCES Host(hid) ON UPDATE CASCADE ON DELETE CASCADE
 );
+
 
 CREATE OR REPLACE TABLE JOtags(
 id INT NOT NULL AUTO_INCREMENT,
@@ -185,15 +186,18 @@ CONSTRAINT fk_JOtags_Tags FOREIGN KEY (tid) REFERENCES Tags(id) ON DELETE CASCAD
 
 CREATE OR REPLACE TABLE JobApplication(
 id INT NOT NULL AUTO_INCREMENT,
-responding_to INT,
+responding_to INT NOT NULL,
 applicant INT NOT NULL,
+fullname VARCHAR(60),
+phone VARCHAR(20),
+email VARCHAR(60),
+message VARCHAR(255),
 apply_date DATETIME DEFAULT NOW(),
 status enum('Sent', 'Pending', 'Accepted', 'Denied'),
-files_path VARCHAR(250),
+file_path VARCHAR(250), 
 PRIMARY KEY (id),
-CONSTRAINT fk_application_offer FOREIGN KEY (responding_to) REFERENCES JobOffer(id) ON DELETE CASCADE ON UPDATE CASCADE,
-CONSTRAINT fk_JApp_TourGuide FOREIGN KEY (applicant) REFERENCES TourGuide(tgid) ON DELETE CASCADE ON UPDATE CASCADE,
-CONSTRAINT fk_JApp_SimUser FOREIGN KEY (applicant) REFERENCES SimpleUser(suid) ON DELETE CASCADE ON UPDATE CASCADE
+CONSTRAINT fk_JApp_User FOREIGN KEY (applicant) REFERENCES User(id) ON DELETE CASCADE ON UPDATE CASCADE,
+CONSTRAINT fk_JApp_JOffer FOREIGN KEY (responding_to) REFERENCES JobOffer(id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 -- @block

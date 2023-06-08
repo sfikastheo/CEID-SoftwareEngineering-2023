@@ -7,7 +7,6 @@ public class Quiz {
     private int id;
     private String title;
     private String description;
-    private int success_points;
     private LocalDateTime date_uploaded;
     private Tour on_tour;
 
@@ -38,13 +37,6 @@ public class Quiz {
         this.description = description;
     }
 
-    public int getSuccess_points() {
-        return success_points;
-    }
-    public void setSuccess_points(int success_points) {
-        this.success_points = success_points;
-    }
-    
     public LocalDateTime getDate_uploaded() {
         return date_uploaded;
     }
@@ -57,7 +49,6 @@ public class Quiz {
     
         this.title = title;
         this.description = description;
-        //this.success_points = success_points;
         this.date_uploaded = upload_date;
     }
 

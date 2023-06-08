@@ -1,5 +1,8 @@
 package com.live_the_city;
 
+
+
+import java.util.ArrayList;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.ResultSet;
@@ -12,15 +15,69 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class ToursHistoryController {
 
+    //------FXML variables --------------------------------
+
+
+    //-------QuizPreview View---------//
+
+    @FXML
+    private AnchorPane QuizPreviewView;
+
+    @FXML
+    private RadioButton falseBtn1;
+
+    @FXML
+    private RadioButton falseBtn2;
+
+    @FXML
+    private RadioButton falseBtn3;
+
+    @FXML
+    private Text question1;
+
+    @FXML
+    private Text question2;
+
+    @FXML
+    private Text question3;
+
+    @FXML
+    private Text quizDescription;
+
+    @FXML
+    private Text quizTitle;
+
+    @FXML
+    private RadioButton trueBtn1;
+
+    @FXML
+    private RadioButton trueBtn2;
+
+    @FXML
+    private RadioButton trueBtn3;
+
+    @FXML
+    private Button okBtn;
+
+    private ArrayList<Text> texts = new ArrayList<>();
+    private ArrayList<RadioButton> trueBtns = new ArrayList<>();
+    private ArrayList<RadioButton> falseBtns = new ArrayList<>();
+
     //-------ToursHistory View--------//
+
+    @FXML
+    private AnchorPane ToursHistoryView;
     @FXML
     private ResourceBundle resources;
     @FXML
@@ -52,6 +109,7 @@ public class ToursHistoryController {
     Quiz quiz;
     Tour selectedTour;
     private ObservableList<Tour> toursList = FXCollections.observableArrayList();
+    NewQuizController nqc;
 
     @FXML
     void initialize() {
@@ -83,13 +141,36 @@ public class ToursHistoryController {
         }catch (SQLException e){
            e.printStackTrace();
         }
+
+
+        texts.add(question1);
+        texts.add(question2);
+        texts.add(question3);
+        trueBtns.add(trueBtn1);
+        trueBtns.add(trueBtn2);
+        trueBtns.add(trueBtn3);
+        falseBtns.add(falseBtn1);
+        falseBtns.add(falseBtn2);
+        falseBtns.add(falseBtn3);
     }
 
+    @FXML
+    void viewTours(ActionEvent event) throws IOException {
+
+        QuizPreviewView.setVisible(false);
+        ToursHistoryView.setVisible(true);
+        hide_back_newTour_Btns();
+        //selectedTour = toursHistCont.passSelectedTour();
+
     
+
+    }
+
     @FXML 
     void getSelectedTour(MouseEvent event) {
         this.selectedTour = toursTableView.getSelectionModel().getSelectedItem();
         quiztourConnBtn.setDisable(false);
+        System.out.println(selectedTour);
 
     } // when a tour is selected from the table
 
@@ -125,10 +206,12 @@ public class ToursHistoryController {
 
     @FXML
     void quizTourConnection(ActionEvent event) {
-        NewQuizController newQuizCon = new NewQuizController();
-        newQuizCon.setSelectedTour(selectedTour); //sends the selected tour to NewQuizController
+        //NewQuizController newQuizCon = new NewQuizController();
+        nqc.setSelectedTour(selectedTour); //sends the selected tour to NewQuizController
         Stage stage = (Stage) quiztourConnBtn.getScene().getWindow();
         stage.close(); //closes current view
+
+    
     
     }
 
@@ -140,6 +223,48 @@ public class ToursHistoryController {
         newTour_Button.setVisible(false);
         quiztourConnBtn.setVisible(true);
     } //hides buttons when TourHistoryView is used for quiz-tour connection
+
+
+    public void displayQuizTitle(String title) {
+        quizTitle.setText(title);
+    }
+
+    public void displayQuizDescription(String description) {
+        quizDescription.setText(description);
+    }
+
+    public void displayquestions(ArrayList<Question> questions) {
+
+        int num = questions.size();
+        System.out.println(num);
+        
+        for(int i = 0; i < num; i++)
+        {
+            trueBtns.get(i).setVisible(true);
+            falseBtns.get(i).setVisible(true);
+        
+            texts.get(i).setText(questions.get(i).getQuestion());
+            if(questions.get(i).getAnswer()=="true")
+            {
+                falseBtns.get(i).setDisable(true);
+                trueBtns.get(i).setSelected(true);
+            }
+            else
+            {
+                trueBtns.get(i).setDisable(true);
+                falseBtns.get(i).setSelected(true);
+            }
+        }
+    }
+
+   /*  public Tour passSelectedTour(){
+        return this.selectedTour;
+    }*/
+
+    public void setController(NewQuizController nqc) {
+        this.nqc = nqc;
+
+    }
 
 
 }  

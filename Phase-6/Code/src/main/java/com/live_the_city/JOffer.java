@@ -44,6 +44,15 @@ public class JOffer {
         this.ispublic = pbl;
     }
 
+    public JOffer(int id, String employer, String title, String description)
+    {
+        this.id = id;
+        this.employer = employer;
+        this.title = title;
+        this.description = description;
+    } //second constructor for functionality
+
+
     public JOffer(){}
 
     public void store(){

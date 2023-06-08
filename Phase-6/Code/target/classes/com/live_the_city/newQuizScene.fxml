@@ -46,9 +46,8 @@
       <Button fx:id="newQuestionBtn" disable="true" layoutX="988.0" layoutY="612.0" mnemonicParsing="false" onAction="#createQuestion" prefHeight="27.0" prefWidth="124.0" text="Add new question" />
       <Text layoutX="971.0" layoutY="663.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fields with (*) are required" />
       <Button fx:id="addImgBtn" disable="true" layoutX="457.0" layoutY="616.0" mnemonicParsing="false" onAction="#uploadFile" text="Add an image" />
-      <Button fx:id="previewQuizBtn" disable="true" layoutX="829.0" layoutY="728.0" mnemonicParsing="false" onAction="#previewQuiz" prefHeight="36.0" prefWidth="158.0" text="Preview Quiz" />
+      <Button fx:id="previewQuizBtn" disable="true" layoutX="266.0" layoutY="728.0" mnemonicParsing="false" onAction="#previewQuiz" prefHeight="36.0" prefWidth="158.0" text="Preview Quiz" />
       <Button fx:id="setQuizInfoBtn" layoutX="1008.0" layoutY="406.0" mnemonicParsing="false" onAction="#createQuiz" prefHeight="27.0" prefWidth="81.0" text="OK" />
-      <Button fx:id="submitQuizBtn" disable="true" layoutX="1017.0" layoutY="728.0" mnemonicParsing="false" onAction="#submitQuiz" prefHeight="36.0" prefWidth="158.0" text="Submit Quiz" />
-      <Button fx:id="toursBtn" disable="true" layoutX="312.0" layoutY="728.0" mnemonicParsing="false" onAction="#viewTours" prefHeight="36.0" prefWidth="158.0" text="Tours" />
+      <Button fx:id="submitQuizBtn" disable="true" layoutX="961.0" layoutY="722.0" mnemonicParsing="false" onAction="#submitQuiz" prefHeight="36.0" prefWidth="158.0" text="Submit Quiz" />
    </children>
 </AnchorPane>

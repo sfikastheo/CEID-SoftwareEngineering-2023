@@ -7,28 +7,41 @@ public class JobApplication {
     private User applicant;
     private JOffer responding_to;
     private String fullname;
-    private String phone;
+    private String phone; //changed from int to string
     private String email;
     private String message;
     private LocalDateTime date_of_application;
     private String status;
     private String file_path;
+    private String applicantName;
 
 
-    public JobApplication(User applicant, String fullname, String phone, String email, String message,
+    public JobApplication(JOffer responding_to, String fullname, String phone, String email, String message,
+            LocalDateTime date_of_application, String status, String file_path, String applicantName) {
+        this.responding_to = responding_to;
+        this.fullname = fullname;
+        this.phone = phone;
+        this.email = email;
+        this.message = message;
+        this.date_of_application = date_of_application;
+        this.status = status;
+        this.file_path = file_path;
+        this.applicantName = applicantName;
+    }
+
+
+    public JobApplication(User applicant, JOffer responding_to, String fullname, String phone, String email, String message,
             LocalDateTime date_of_application, String file_path) {
         this.applicant = applicant;
-        //this.respoonding_to = respoonding_to;
+        this.responding_to = responding_to;
         this.fullname = fullname;
         this.phone = phone;
         this.email = email;
         this.message = message;
         this.date_of_application = date_of_application;
         this.file_path = file_path;
-    }
+    } //second constructor for functionality
 
-    public JobApplication() {
-    }
 
     public User getApplicant() {
         return applicant;
@@ -95,6 +108,13 @@ public class JobApplication {
         this.responding_to = responding_to;
     }
 
+    public String getApplicantName() {
+        return applicantName;
+    }
 
-    
+
+    public void setApplicantName(String applicantName) {
+        this.applicantName = applicantName;
+    }
+ 
 }

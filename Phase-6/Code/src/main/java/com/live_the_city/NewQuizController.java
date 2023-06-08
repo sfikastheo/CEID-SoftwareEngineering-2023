@@ -1,3 +1,4 @@
+
 package com.live_the_city;
 
 import java.io.File;
@@ -30,7 +31,7 @@ import javafx.stage.FileChooser.ExtensionFilter;
 
 public class NewQuizController implements Initializable {
     
-    //-----------------------------FXML variables-----------------------------------
+//-----------------------------FXML variables-----------------------------------
     @FXML
     private Button addImgBtn;
 
@@ -59,13 +60,10 @@ public class NewQuizController implements Initializable {
     private Button setQuizInfoBtn;
 
     @FXML
-    private Button submitQuizBtn;
-
-    @FXML
-    private Button toursBtn;
+    public Button submitQuizBtn;
 
 
-    //----------------------------Other variables------------------------------------
+//----------------------------Other variables------------------------------------
     private ToggleGroup radioGroup;
 
     private Quiz quiz;
@@ -80,9 +78,11 @@ public class NewQuizController implements Initializable {
 
     private String filePath = null;
 
+    NewQuizController nqc;
 
 
-    //---------------------------FXML functions-------------------------------------
+
+//---------------------------FXML methods-------------------------------------
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         radioButtonSettup(); 
@@ -129,6 +129,7 @@ public class NewQuizController implements Initializable {
 
     }
 
+
     @FXML
     void createQuestion(ActionEvent event) {
         String answer;
@@ -156,9 +157,7 @@ public class NewQuizController implements Initializable {
             quizQuestion.clear();
             this.filePath = null;
             selectedBtn.setSelected(false);
-            toursBtn.setDisable(false);
             previewQuizBtn.setDisable(false);
-            submitQuizBtn.setDisable(false);
 
 
         }
@@ -169,21 +168,6 @@ public class NewQuizController implements Initializable {
     @FXML
     void previewQuiz(ActionEvent event) throws IOException {
        
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("quizPreviewScene.fxml"));
-        Parent root1 = (Parent) fxmlLoader.load();
-        Stage stage = new Stage();
-        stage.setScene(new Scene(root1));
-        stage.show();
-
-        QuizPreviewController quizPrevCont  = fxmlLoader.getController();
-        quizPrevCont.displayQuizTitle(this.title);
-        quizPrevCont.displayQuizDescription(this.description);
-        quizPrevCont.displayquestions(questions);
-    }
-
-    @FXML
-    void viewTours(ActionEvent event) throws IOException {
-
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ToursHistoryView.fxml"));
         Parent root1 = (Parent) fxmlLoader.load();
         Stage stage = new Stage();
@@ -191,17 +175,25 @@ public class NewQuizController implements Initializable {
         stage.show();
 
         ToursHistoryController toursHistCont  = fxmlLoader.getController();
-        toursHistCont.hide_back_newTour_Btns();
+        toursHistCont.displayQuizTitle(this.title);
+        toursHistCont.displayQuizDescription(this.description);
+        toursHistCont.displayquestions(questions);
+        toursHistCont.setController(this.nqc);
+       // pass_nqController();
+
+
 
     }
+
+
+
 
     @FXML
     void submitQuiz(ActionEvent event) {
         
         try{
-            //String query = "INSERT INTO Quiz(qid, title, on_tour, descr, date_uploaded) VALUES(null,'"+this.quiz.getTitle()+"','"+ selectedTour+"','"+this.quiz.getDescription()+"', now())";
-            //System.out.println(query);
-            String query = "INSERT INTO Quiz(qid, title, descr, date_uploaded) VALUES(null,'"+this.quiz.getTitle()+"','"+this.quiz.getDescription()+"', now())";
+            String query = "INSERT INTO Quiz(qid, title, on_tour, descr, date_uploaded) VALUES(null,'"+this.quiz.getTitle()+"','"+ selectedTour.getId()+"','"+this.quiz.getDescription()+"', now())";
+            //String query = "INSERT INTO Quiz(qid, title, descr, date_uploaded) VALUES(null,'"+this.quiz.getTitle()+"','"+this.quiz.getDescription()+"', now())";
             Statement statement = DBcommunicator.getConnection().createStatement();
             statement.execute(query);
 
@@ -237,7 +229,7 @@ public class NewQuizController implements Initializable {
     }
 
     
-    //----------------------------Other functions------------------------------------
+//----------------------------Other methods------------------------------------
     private boolean validateQuizInfo( String title)
     { 
         
@@ -316,8 +308,12 @@ public class NewQuizController implements Initializable {
     }
 
     public void setSelectedTour(Tour tour){
-         //submitQuizBtn.setDisable(false);
+         submitQuizBtn.setDisable(false);
          this.selectedTour = tour;
+    }
+
+    public void set_nqController(NewQuizController nqc){
+            this.nqc = nqc;
     }
 
     
