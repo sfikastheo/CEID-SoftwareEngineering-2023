@@ -14,7 +14,7 @@ import java.io.IOException;
  */
 public class App extends Application {
     public static String current_user = "sample-username";
-    public static String current_type = "Host";
+    public static String current_type = "TourGuise";
     public static Scene scene;
 
     public static DBcommunicator currentConnection = new DBcommunicator();

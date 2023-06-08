@@ -175,6 +175,8 @@ public class NewQuizController implements Initializable {
         stage.show();
 
         ToursHistoryController toursHistCont  = fxmlLoader.getController();
+
+        toursHistCont.quizPreview();
         toursHistCont.displayQuizTitle(this.title);
         toursHistCont.displayQuizDescription(this.description);
         toursHistCont.displayquestions(questions);

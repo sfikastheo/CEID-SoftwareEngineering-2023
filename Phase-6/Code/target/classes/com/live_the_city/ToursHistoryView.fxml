@@ -18,7 +18,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="823.0" prefWidth="1283.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.live_the_city.ToursHistoryController">
    <children>
-      <AnchorPane fx:id="ToursHistoryView" prefHeight="796.0" prefWidth="1279.0" visible="false">
+      <AnchorPane fx:id="ToursHistoryView" prefHeight="796.0" prefWidth="1279.0">
          <children>
             <ImageView fitHeight="803.0" fitWidth="1282.0">
                <image>
@@ -75,7 +75,7 @@
             </AnchorPane>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="QuizPreviewView" layoutX="7.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0">
+      <AnchorPane fx:id="QuizPreviewView" layoutX="7.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" visible="false">
          <children>
             <Text layoutX="33.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" Quiz Preview:" wrappingWidth="229.41812133789062">
                <font>

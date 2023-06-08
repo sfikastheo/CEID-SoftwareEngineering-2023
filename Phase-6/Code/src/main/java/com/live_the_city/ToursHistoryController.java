@@ -257,9 +257,10 @@ public class ToursHistoryController {
         }
     }
 
-   /*  public Tour passSelectedTour(){
-        return this.selectedTour;
-    }*/
+    public void quizPreview(){
+        ToursHistoryView.setVisible(false);
+        QuizPreviewView.setVisible(true);
+    }
 
     public void setController(NewQuizController nqc) {
         this.nqc = nqc;
