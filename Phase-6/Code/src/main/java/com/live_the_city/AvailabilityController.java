@@ -58,7 +58,6 @@ public class AvailabilityController {
         showPaymentScreen();
     }
 
-
     public void checkPersAvail(Date date){
 
         String persons = personNumField.getText();

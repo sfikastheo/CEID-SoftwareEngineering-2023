@@ -290,12 +290,12 @@ public class NewJOfferController {
 
     }
     
-    @FXML
+    @FXML   //extra functionality: applying to GUI only
     void publicselection(ActionEvent event){
         save_ToggleButton.setSelected(false);
     }
 
-    @FXML
+    @FXML   //extra functionality: applying to GUI only
     void saveselection(ActionEvent event){
         publish_ToggleButton.setSelected(false);
     }

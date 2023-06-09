@@ -52,7 +52,6 @@ public class JOffer {
         this.description = description;
     } //second constructor for functionality
 
-
     public JOffer(){}
 
     public void store(){

@@ -82,7 +82,7 @@ public class MyJobOffersController {
         }
     }
 
-    @FXML
+    @FXML   //extra functionality out of the use case
     void back2home() throws IOException{
         App.scene = new Scene(App.loadFXML("HomePage"));
         Stage secondaryStage = new Stage();
@@ -94,7 +94,7 @@ public class MyJobOffersController {
     }
 
     @FXML
-    void createJOffer(ActionEvent event) throws IOException{
+    void newJOffer(ActionEvent event) throws IOException{
         //show NewTour Window
         App.scene = new Scene(App.loadFXML("NewJOffer"));
         Stage secondaryStage = new Stage();

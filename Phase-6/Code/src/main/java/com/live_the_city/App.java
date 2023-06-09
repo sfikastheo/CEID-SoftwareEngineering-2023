@@ -13,12 +13,11 @@ import java.io.IOException;
  * JavaFX App
  */
 public class App extends Application {
-    public static String current_user = "sample-username";
-    public static String current_type = "TourGuise";
+    public static String current_user = "Triada";
+    public static String current_type = "Host";
     public static Scene scene;
 
     public static DBcommunicator currentConnection = new DBcommunicator();
-    //public static Connection connectDB = currentConnection.getConnection();
     
     @Override
     public void start(Stage stage) throws Exception {

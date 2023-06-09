@@ -1,52 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.live_the_city.AvailabilityController">
    <children>
-      <Label fx:id="title" layoutX="599.0" layoutY="25.0" text="Title">
+      <Label fx:id="title" layoutX="389.0" layoutY="26.0" prefHeight="51.0" prefWidth="503.0">
          <font>
             <Font size="44.0" />
          </font>
       </Label>
-      <DatePicker fx:id="datePicker" layoutX="106.0" layoutY="207.0" prefHeight="43.0" prefWidth="211.0" />
-      <Label layoutX="106.0" layoutY="156.0" text="Επιλέξτε Ημ/νια:">
+      <Label layoutX="106.0" layoutY="156.0" text="Choose Date:">
          <font>
             <Font size="29.0" />
          </font>
       </Label>
-      <Label layoutX="834.0" layoutY="156.0" text="Διαθέσιμες Ημ/νιες:">
+      <Label layoutX="834.0" layoutY="156.0" text="Available Dates:" textFill="#9e0f0f">
          <font>
             <Font size="29.0" />
          </font>
       </Label>
-      <Label layoutX="834.0" layoutY="220.0" text="Από: ">
-         <font>
-            <Font size="29.0" />
-         </font>
-      </Label>
-      <Label fx:id="startdateLbl" layoutX="915.0" layoutY="220.0" text="DD/MM/YYYY">
-         <font>
-            <Font size="29.0" />
-         </font>
-      </Label>
-      <Label layoutX="834.0" layoutY="282.0" text="Έως:">
-         <font>
-            <Font size="29.0" />
-         </font>
-      </Label>
-      <Label fx:id="endDate" layoutX="915.0" layoutY="282.0" text="DD/MM/YYYY">
-         <font>
-            <Font size="29.0" />
-         </font>
-      </Label>
-      <Label layoutX="834.0" layoutY="369.0" text="Άτομα ανά ομάδα:">
+      <VBox alignment="TOP_RIGHT" layoutX="834.0" layoutY="220.0">
+         <children>
+            <Label text="From:" textFill="#4edf00">
+               <font>
+                  <Font size="29.0" />
+               </font>
+            </Label>
+            <Label text="To:">
+               <font>
+                  <Font size="29.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <VBox layoutX="939.0" layoutY="220.0">
+         <children>
+            <Label fx:id="startdateLbl" text="DD/MM/YYYY">
+               <font>
+                  <Font size="29.0" />
+               </font>
+            </Label>
+            <Label fx:id="endDate" text="DD/MM/YYYY">
+               <font>
+                  <Font size="29.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <Label layoutX="834.0" layoutY="369.0" text="Persons per team:">
          <font>
             <Font size="29.0" />
          </font>
@@ -56,16 +63,17 @@
             <Font size="29.0" />
          </font>
       </Label>
-      <Label layoutX="106.0" layoutY="295.0" text="Επιλέξτε αριθμό ατόμων:">
+      <Label layoutX="106.0" layoutY="352.0" prefHeight="34.0" prefWidth="331.0" text="Enter number of persons:">
          <font>
             <Font size="29.0" />
          </font>
       </Label>
-      <TextField fx:id="personNumField" layoutX="450.0" layoutY="304.0" prefHeight="26.0" prefWidth="30.0" />
-      <Button layoutX="555.0" layoutY="505.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="170.0" text="Έλεγχος και πληρωμή">
+      <TextField fx:id="personNumField" layoutX="437.0" layoutY="356.0" prefHeight="26.0" prefWidth="30.0" />
+      <Button layoutX="555.0" layoutY="505.0" mnemonicParsing="false" onMouseClicked="#chooseDate" prefHeight="57.0" prefWidth="170.0" text="Check and Pay">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
+      <ChoiceBox fx:id="datePicker" layoutX="106.0" layoutY="209.0" prefWidth="150.0" />
    </children>
 </AnchorPane>

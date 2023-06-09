@@ -1,5 +1,6 @@
 package com.live_the_city;
 
+import java.util.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -17,8 +18,9 @@ public class Tour {
     private String description;
     private int duration;
     private boolean ispublic; 
-    private LocalDateTime date_published;
+    private Date date_published;
     private List<String> dates_available;
+    private List<Date> dates_available2;
     private int groups_per_date;
     private int spots_per_group;
     private String location;
@@ -28,7 +30,7 @@ public class Tour {
     private String filespath = "./src/main/saved_data/"+App.current_type+"/"+App.current_user+"/Tours/";
 
     //METHODS
-    public Tour(int id, String title, List<String> tags, boolean virt, String tg, String desc, int mins, boolean pbl, LocalDateTime dtpbl, List<String> dtavail, int gpd, int spg, String loc, float price, float rate, int tb)
+    public Tour(int id, String title, List<String> tags, boolean virt, String tg, String desc, int mins, boolean pbl, Date dtpbl, List<String> dtavail, int gpd, int spg, String loc, float price, float rate, int tb)
     {
         this.id = id;
         this.title = title;
@@ -40,6 +42,25 @@ public class Tour {
         this.ispublic = pbl;
         this.date_published = dtpbl;
         this.dates_available = dtavail;
+        this.groups_per_date = gpd;
+        this.spots_per_group = spg;
+        this.location = loc;
+        this.price = price;
+        this.rating = rate;
+        this.times_bought = tb;
+    }
+
+    public Tour(int id, String title, boolean virt, String tg, String desc, int mins, boolean pbl, Date dtpbl, List<Date> dtavail, int gpd, int spg, String loc, float price, float rate, int tb)
+    {
+        this.id = id;
+        this.title = title;
+        this.virtual = virt;
+        this.offered_by = tg;
+        this.description = desc;
+        this.duration = mins;
+        this.ispublic = pbl;
+        this.date_published = dtpbl;
+        this.dates_available2 = dtavail;
         this.groups_per_date = gpd;
         this.spots_per_group = spg;
         this.location = loc;
@@ -195,10 +216,10 @@ public class Tour {
         this.ispublic = pbl;
     }
 
-    public LocalDateTime getDatePublished(){
+    public Date getDatePublished(){
         return this.date_published;
     }
-    public void setDatePublished(LocalDateTime dtpbl){
+    public void setDatePublished(Date dtpbl){
         this.date_published = dtpbl;
     }
 
@@ -219,6 +240,9 @@ public class Tour {
             
     }
 
+    public List<Date> getDatesAvailable2(){
+        return this.dates_available2;
+    }
     public int getGroupsPerDate(){
         return this.groups_per_date;
     }

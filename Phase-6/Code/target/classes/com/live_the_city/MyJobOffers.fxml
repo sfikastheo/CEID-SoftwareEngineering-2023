@@ -148,7 +148,7 @@
             <TableColumn fx:id="Public_Column" prefWidth="105.0" text="Public" />
         </columns>
       </TableView>
-      <Button fx:id="newJobOffer_Button" contentDisplay="GRAPHIC_ONLY" layoutX="1119.0" layoutY="700.0" mnemonicParsing="false" onAction="#createJOffer" prefHeight="48.0" prefWidth="48.0" text="Button" AnchorPane.bottomAnchor="28.0" AnchorPane.leftAnchor="1119.0" AnchorPane.rightAnchor="81.0" AnchorPane.topAnchor="700.0">
+      <Button fx:id="newJobOffer_Button" contentDisplay="GRAPHIC_ONLY" layoutX="1119.0" layoutY="700.0" mnemonicParsing="false" onAction="#newJOffer" prefHeight="48.0" prefWidth="48.0" text="Button" AnchorPane.bottomAnchor="28.0" AnchorPane.leftAnchor="1119.0" AnchorPane.rightAnchor="81.0" AnchorPane.topAnchor="700.0">
          <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0">
                <image>

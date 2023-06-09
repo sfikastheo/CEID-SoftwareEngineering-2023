@@ -55,8 +55,6 @@ public class ToursDetController {
     private static String tour_id;
     private static Tour tour;
 
-
-
     @FXML
     private void initialize() {
         loadTour();
@@ -67,13 +65,12 @@ public class ToursDetController {
         partLbl.setText(Integer.toString(tour.getTimesBought()));
         locLbl.setText(tour.getLocation());
         ratingLbl.setText(Float.toString(tour.getRating()));
-        tguideLbl.setText(tour.getTourGuide().getUsername());
+        tguideLbl.setText(tour.getTourGuide());
         virtualLbl.setText(Boolean.toString(tour.getVirtual()));
         tourTitle.setText(tour.getTitle());
         tourTitle.setAlignment(Pos.CENTER);
 
     }
-
 
     @FXML
     private void confirmParticipation(MouseEvent event) {
@@ -92,7 +89,6 @@ public class ToursDetController {
                 stage.show();
 
             
-
                 Stage currentStage =  (Stage) tourTitle.getScene().getWindow();
                 currentStage.close();
             }
@@ -102,9 +98,8 @@ public class ToursDetController {
             }
     }
 
-
     private List<Date> loadDates(){
-        return tour.getDatesAvailable();
+        return tour.getDatesAvailable2();
     }
 
     public static void setTourId(String tourId) {
@@ -148,12 +143,13 @@ public class ToursDetController {
                 LocalDate date = LocalDate.now().plusDays(i);
                 dates.add(Date.from(date.atStartOfDay(ZoneId.systemDefault()).toInstant()));
             }
-
-            tour = new Tour(result.getInt(1), result.getString(2),tags, result.getBoolean(3), tourGuide, result.getString(4), result.getInt(5), result.getBoolean(9), result.getDate(10), dates, result.getInt(7), result.getInt(8), result.getString(6), result.getFloat(11), result.getFloat(12), result.getInt(13));
+            
+            tour = new Tour(result.getInt(1), result.getString(2), result.getBoolean(3), tourGuide.getUsername(), result.getString(4), result.getInt(5), result.getBoolean(9), result.getDate(10), dates, result.getInt(7), result.getInt(8), result.getString(6), result.getFloat(11), result.getFloat(12), result.getInt(13));
         }
         catch (Exception e) {
             e.printStackTrace();
         }
 
     }
+
 }

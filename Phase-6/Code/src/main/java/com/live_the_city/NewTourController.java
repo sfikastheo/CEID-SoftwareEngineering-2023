@@ -7,9 +7,9 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.regex.Pattern;
@@ -165,9 +165,9 @@ public class NewTourController {
     private LocalTime startHour; 
     private int minutes;
     private List<String> groupslist = new ArrayList<String>();
-    List<ToggleButton> buttons = new ArrayList<ToggleButton>();
-    String s;
-    Tour creation = new Tour();
+    private List<ToggleButton> buttons = new ArrayList<ToggleButton>();
+    private String s;
+    private Tour creation = new Tour();
     
 //---------NAVIGATION METHODS-----------//
     @FXML
@@ -279,8 +279,8 @@ public class NewTourController {
         return true;
     }
 
-    @FXML
-    public void addGroup(ActionEvent event){
+    @FXML   //extra functionality to accomplish smaller more independent functions. I  
+    public void addGroup(ActionEvent event){    //It is contained in the user's input procedure for tour info
         LocalDate current_date = dates_DatePicker.getValue();
 
         //check for missing or invalid date
@@ -409,7 +409,7 @@ public class NewTourController {
         paymentField3_TextField.setVisible(true);
     }
    
-    @FXML
+    @FXML   //extra functionality: It is contained in the select payment method from user input 
     void paypalPayment(ActionEvent event){
         paymentField1_TextField.setPromptText("EMAIL");
         paymentField2_TextField.setVisible(false);
@@ -526,17 +526,17 @@ public class NewTourController {
 
     }
 
-    @FXML
+    @FXML   //extra functionality: applying to front end only
     void publicselection(ActionEvent event){
         save_ToggleButton.setSelected(false);
     }
 
-    @FXML
+    @FXML   //extra functionality: applying to front end only
     void saveselection(ActionEvent event){
         publish_ToggleButton.setSelected(false);
     }
 
-    @FXML
+    @FXML   
     void publicize(ActionEvent event) throws IOException{
         if (publish_ToggleButton.isSelected()){
             creation.setIsPublic(true);
@@ -618,7 +618,7 @@ public class NewTourController {
         creation.setDescription(description);
         creation.setDuration(minutes);
         creation.setIsPublic(false);
-        creation.setDatePublished(LocalDateTime.now());
+        creation.setDatePublished(new Date());
         creation.setDatesAvailable(groupslist);
         creation.setGroupsPerDate(groups_allowed);
         creation.setSpotsPerGroup(spotsingroup);
@@ -634,6 +634,7 @@ public class NewTourController {
 
     }
 
+    //extra functionality: applying to front end only
     private void LabelClearTextTransition(Label o){
         PauseTransition visibleTextPause = new PauseTransition(
             Duration.seconds(5)

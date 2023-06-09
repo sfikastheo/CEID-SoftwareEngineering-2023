@@ -174,10 +174,8 @@ public class ToursHistoryController {
 
     } // when a tour is selected from the table
 
-
-
     @FXML
-    void createTour() throws IOException{
+    void newTour() throws IOException{
         //show NewTour Window
         App.scene = new Scene(App.loadFXML("NewTour_all"));
         Stage secondaryStage = new Stage();
@@ -189,7 +187,7 @@ public class ToursHistoryController {
         currentstage.close();
     }
 
-    @FXML
+    @FXML   //extra functionality, out of use case
     void back2home() throws IOException{
 
         App.scene = new Scene(App.loadFXML("HomePage"));
@@ -201,8 +199,6 @@ public class ToursHistoryController {
         currentstage.close();
          
     }
-
-
 
     @FXML
     void quizTourConnection(ActionEvent event) {
@@ -223,7 +219,6 @@ public class ToursHistoryController {
         newTour_Button.setVisible(false);
         quiztourConnBtn.setVisible(true);
     } //hides buttons when TourHistoryView is used for quiz-tour connection
-
 
     public void displayQuizTitle(String title) {
         quizTitle.setText(title);
