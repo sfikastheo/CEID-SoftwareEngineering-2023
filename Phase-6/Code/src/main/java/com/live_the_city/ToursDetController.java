@@ -59,7 +59,7 @@ public class ToursDetController {
 
     @FXML
     private void initialize() {
-        setTour();
+        loadTour();
 
         descField.setText(tour.getDescription());
         costLbl.setText(Float.toString(tour.getPrice()));
@@ -111,7 +111,7 @@ public class ToursDetController {
         tour_id = tourId;
     }
 
-    public static void setTour(){
+    public static void loadTour(){
         TourGuide tourGuide = null;
 
         try{
