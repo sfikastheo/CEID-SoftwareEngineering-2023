@@ -2,29 +2,46 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.live_the_city.ToursController">
    <children>
-      <Label layoutX="449.0" layoutY="26.0" prefHeight="64.0" prefWidth="381.0" text="Επιλογή Ξενάγησης" textAlignment="CENTER" wrapText="true">
-         <font>
-            <Font size="43.0" />
-         </font>
-      </Label>
-      <Button fx:id="selectTourBtn" layoutX="594.0" layoutY="724.0" mnemonicParsing="false" onMouseClicked="#selectTour" prefHeight="35.0" prefWidth="91.0" text="Επιλογή">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Button>
-      <TableView fx:id="toursTable" layoutX="-1.0" layoutY="88.0" prefHeight="627.0" prefWidth="1280.0">
-        <columns>
-          <TableColumn prefWidth="75.0" text="C1" />
-          <TableColumn prefWidth="75.0" text="C2" />
-        </columns>
-      </TableView>
+      <AnchorPane fx:id="mainPane" prefHeight="800.0" prefWidth="1280.0">
+         <children>
+            <Button fx:id="selectTourBtn" layoutX="595.0" layoutY="729.0" mnemonicParsing="false" onMouseClicked="#getInvLink" prefHeight="35.0" prefWidth="91.0" text="Select">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Label layoutX="528.0" layoutY="18.0" prefHeight="64.0" prefWidth="224.0" text="Select Tour" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font size="43.0" />
+               </font>
+            </Label>
+            <TableView fx:id="toursTable" layoutY="87.0" prefHeight="627.0" prefWidth="1280.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="LinkPane" prefHeight="800.0" prefWidth="1280.0" visible="false">
+         <children>
+            <TextField fx:id="linkField" layoutX="437.0" layoutY="314.0" prefHeight="27.0" prefWidth="407.0" promptText="Enter your Link here!">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextField>
+            <Label layoutX="339.0" layoutY="256.0" text="Please provide an Invite Link (if you have one):">
+               <font>
+                  <Font size="29.0" />
+               </font>
+            </Label>
+            <Button fx:id="linkBtn" layoutX="601.0" layoutY="384.0" mnemonicParsing="false" onMouseClicked="#checkLink" prefHeight="33.0" prefWidth="78.0" text="Ok">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

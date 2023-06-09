@@ -4,95 +4,112 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.live_the_city.ToursDetController">
    <children>
-      <Label fx:id="tourTitle" layoutX="579.0" layoutY="14.0" prefHeight="66.0" prefWidth="90.0" text="Title">
+      <Label fx:id="tourTitle" layoutX="547.0" layoutY="14.0" prefHeight="66.0" prefWidth="587.0" text="Title">
          <font>
             <Font size="44.0" />
          </font>
       </Label>
-      <TextArea disable="true" layoutX="472.0" layoutY="321.0" prefHeight="446.0" prefWidth="772.0" text="Μια ωραία πεταλουδα">
+      <TextArea fx:id="descField" disable="true" layoutX="472.0" layoutY="321.0" prefHeight="446.0" prefWidth="772.0">
          <font>
             <Font size="20.0" />
          </font></TextArea>
-      <Label layoutX="472.0" layoutY="256.0" text="Περιγραφή:">
+      <Label layoutX="470.0" layoutY="286.0" text="Description:">
          <font>
             <Font size="29.0" />
          </font>
       </Label>
-      <Label layoutX="43.0" layoutY="305.0" text="Κόστος:">
-         <font>
-            <Font size="29.0" />
-         </font>
-      </Label>
-      <Label fx:id="costLbl" layoutX="155.0" layoutY="305.0" prefHeight="43.0" prefWidth="66.0" text="Cost">
-         <font>
-            <Font size="29.0" />
-         </font>
-      </Label>
-      <Label layoutX="32.0" layoutY="348.0" text="Ξεναγός:">
-         <font>
-            <Font size="29.0" />
-         </font>
-      </Label>
-      <Label fx:id="tguideLbl" layoutX="155.0" layoutY="348.0" prefHeight="43.0" prefWidth="90.0" text="Guide">
-         <font>
-            <Font size="29.0" />
-         </font>
-      </Label>
-      <Label layoutX="23.0" layoutY="385.0" text="Διάρκεια:">
-         <font>
-            <Font size="29.0" />
-         </font>
-      </Label>
-      <Label fx:id="durLbl" layoutX="155.0" layoutY="385.0" prefHeight="43.0" prefWidth="90.0" text="Dur">
-         <font>
-            <Font size="29.0" />
-         </font>
-      </Label>
-      <Label layoutX="55.0" layoutY="428.0" text="Virtual:">
-         <font>
-            <Font size="29.0" />
-         </font>
-      </Label>
-      <Label fx:id="virtualLbl" layoutX="155.0" layoutY="428.0" prefHeight="43.0" prefWidth="77.0" text="Vir">
-         <font>
-            <Font size="29.0" />
-         </font>
-      </Label>
-      <Label layoutX="15.0" layoutY="583.0" text="Τοποθεσία:">
-         <font>
-            <Font size="29.0" />
-         </font>
-      </Label>
-      <Label layoutX="171.0" layoutY="583.0" prefHeight="43.0" prefWidth="66.0" text="Loc">
-         <font>
-            <Font size="29.0" />
-         </font>
-      </Label>
-      <Label layoutX="4.0" layoutY="626.0" text="Αξιολόγηση:">
-         <font>
-            <Font size="29.0" />
-         </font>
-      </Label>
-      <Label fx:id="ratingLbl" layoutX="171.0" layoutY="626.0" text="Rating">
-         <font>
-            <Font size="29.0" />
-         </font>
-      </Label>
-      <Label layoutX="6.0" layoutY="669.0" text="Συμμετοχές: ">
-         <font>
-            <Font size="29.0" />
-         </font>
-      </Label>
-      <Label fx:id="partLbl" layoutX="174.0" layoutY="669.0" text="Part">
-         <font>
-            <Font size="29.0" />
-         </font>
-      </Label>
-      <Button layoutX="152.0" layoutY="736.0" mnemonicParsing="false" text="Δήλωσε Συμμετοχή!">
+      <VBox alignment="TOP_RIGHT" layoutX="50.0" layoutY="303.0">
+         <children>
+            <Label text="Cost:" textFill="#9707e5">
+               <font>
+                  <Font size="29.0" />
+               </font>
+            </Label>
+            <Label text="Tour Guide:" textFill="#9707e5">
+               <font>
+                  <Font size="29.0" />
+               </font>
+            </Label>
+            <Label text="Duration:" textFill="#9707e5">
+               <font>
+                  <Font size="29.0" />
+               </font>
+            </Label>
+            <Label text="Virtual:" textFill="#9707e5">
+               <font>
+                  <Font size="29.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <VBox layoutX="213.0" layoutY="303.0" prefHeight="136.0" prefWidth="252.0">
+         <children>
+            <Label fx:id="costLbl" prefHeight="34.0" prefWidth="263.0">
+               <font>
+                  <Font size="29.0" />
+               </font>
+            </Label>
+            <Label fx:id="tguideLbl" prefHeight="34.0" prefWidth="290.0">
+               <font>
+                  <Font size="29.0" />
+               </font>
+            </Label>
+            <Label fx:id="durLbl" prefHeight="34.0" prefWidth="273.0">
+               <font>
+                  <Font size="29.0" />
+               </font>
+            </Label>
+            <Label fx:id="virtualLbl" prefHeight="34.0" prefWidth="287.0">
+               <font>
+                  <Font size="29.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <VBox alignment="TOP_RIGHT" layoutX="21.0" layoutY="554.0">
+         <children>
+            <Label text="Location:" textFill="#8a5c00">
+               <font>
+                  <Font size="29.0" />
+               </font>
+            </Label>
+            <Label text="Ratings:" textFill="#8a5c00">
+               <font>
+                  <Font size="29.0" />
+               </font>
+            </Label>
+            <Label text="Participations:" textFill="#8a5c00">
+               <font>
+                  <Font size="29.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <VBox layoutX="213.0" layoutY="554.0" prefHeight="102.0" prefWidth="252.0">
+         <children>
+            <Label fx:id="locLbl" prefHeight="34.0" prefWidth="278.0">
+               <font>
+                  <Font size="29.0" />
+               </font>
+            </Label>
+            <Label fx:id="ratingLbl" prefHeight="34.0" prefWidth="258.0">
+               <font>
+                  <Font size="29.0" />
+               </font>
+            </Label>
+            <Label fx:id="partLbl" prefHeight="34.0" prefWidth="311.0">
+               <font>
+                  <Font size="29.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <Button fx:id="joinBtn" layoutX="152.0" layoutY="729.0" mnemonicParsing="false" onMouseClicked="#confirmParticipation" prefHeight="40.0" prefWidth="161.0" text="Join this Tour!">
          <font>
             <Font size="18.0" />
          </font>

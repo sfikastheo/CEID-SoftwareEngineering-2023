@@ -1,78 +1,107 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.live_the_city.EventsDetController">
    <children>
-      <Label fx:id="tourTitle" layoutX="579.0" layoutY="14.0" prefHeight="66.0" prefWidth="90.0" text="Title">
-         <font>
-            <Font size="44.0" />
-         </font>
-      </Label>
-      <TextArea disable="true" layoutX="472.0" layoutY="321.0" prefHeight="446.0" prefWidth="772.0" text="Μια ωραία πεταλουδα">
-         <font>
-            <Font size="20.0" />
-         </font></TextArea>
-      <Label layoutX="472.0" layoutY="256.0" text="Περιγραφή:">
-         <font>
-            <Font size="29.0" />
-         </font>
-      </Label>
-      <Label layoutY="348.0" text="Δημιουργός:">
-         <font>
-            <Font size="29.0" />
-         </font>
-      </Label>
-      <Label fx:id="creatorLbl" layoutX="169.0" layoutY="348.0" prefHeight="43.0" prefWidth="90.0" text="Guide">
-         <font>
-            <Font size="29.0" />
-         </font>
-      </Label>
-      <Label layoutX="17.0" layoutY="391.0" text="Τοποθεσία:">
-         <font>
-            <Font size="29.0" />
-         </font>
-      </Label>
-      <Label fx:id="locLbl" layoutX="173.0" layoutY="391.0" prefHeight="43.0" prefWidth="66.0" text="Loc">
-         <font>
-            <Font size="29.0" />
-         </font>
-      </Label>
-      <Label layoutX="6.0" layoutY="434.0" text="Αξιολόγηση:">
-         <font>
-            <Font size="29.0" />
-         </font>
-      </Label>
-      <Label fx:id="ratingLbl" layoutX="173.0" layoutY="434.0" text="Rating">
-         <font>
-            <Font size="29.0" />
-         </font>
-      </Label>
-      <Label layoutX="8.0" layoutY="477.0" text="Συμμετοχές: ">
-         <font>
-            <Font size="29.0" />
-         </font>
-      </Label>
-      <Label fx:id="partLbl" layoutX="176.0" layoutY="477.0" text="Part">
-         <font>
-            <Font size="29.0" />
-         </font>
-      </Label>
-      <Button layoutX="152.0" layoutY="736.0" mnemonicParsing="false" text="Δήλωσε Συμμετοχή!">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Button>
-      <DatePicker layoutX="143.0" layoutY="617.0" prefHeight="34.0" prefWidth="295.0" promptText="datePicker" />
-      <Label layoutX="17.0" layoutY="561.0" text="Επιλογή Ημ/νιας:">
-         <font>
-            <Font size="29.0" />
-         </font>
-      </Label>
+      <AnchorPane fx:id="linkPane" layoutY="190.0" prefHeight="381.0" prefWidth="1280.0" visible="false">
+         <children>
+            <TextField fx:id="linkField" layoutX="439.0" layoutY="156.0" prefHeight="24.0" prefWidth="402.0">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </TextField>
+            <Button fx:id="linkBtn" layoutX="616.0" layoutY="232.0" mnemonicParsing="false" onMouseClicked="#closeLink" text="Ok">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="mainPane" prefHeight="800.0" prefWidth="1280.0">
+         <children>
+            <Label fx:id="titleLbl" layoutX="495.0" layoutY="30.0" prefHeight="51.0" prefWidth="291.0">
+               <font>
+                  <Font size="44.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="descField" disable="true" layoutX="508.0" layoutY="354.0" prefHeight="446.0" prefWidth="772.0" text="Μια ωραία πεταλουδα">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </TextArea>
+            <Label layoutX="508.0" layoutY="304.0" text="Description:">
+               <font>
+                  <Font size="29.0" />
+               </font>
+            </Label>
+            <VBox alignment="TOP_RIGHT" layoutX="29.0" layoutY="354.0">
+               <children>
+                  <Label alignment="CENTER_RIGHT" text="Creator:">
+                     <font>
+                        <Font size="29.0" />
+                     </font>
+                  </Label>
+                  <Label text="Location:">
+                     <font>
+                        <Font size="29.0" />
+                     </font>
+                  </Label>
+                  <Label text="Rating:">
+                     <font>
+                        <Font size="29.0" />
+                     </font>
+                  </Label>
+                  <Label text="Attends:">
+                     <font>
+                        <Font size="29.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox layoutX="154.0" layoutY="354.0" prefHeight="136.0" prefWidth="234.0">
+               <children>
+                  <Label fx:id="creatorLbl" prefHeight="34.0" prefWidth="253.0" text="Guide">
+                     <font>
+                        <Font size="29.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="locLbl" prefHeight="34.0" prefWidth="285.0" text="Loc">
+                     <font>
+                        <Font size="29.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="ratingLbl" prefHeight="34.0" prefWidth="246.0" text="Rating">
+                     <font>
+                        <Font size="29.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="partLbl" prefHeight="34.0" prefWidth="318.0" text="Part">
+                     <font>
+                        <Font size="29.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <Button fx:id="attendBtn" layoutX="187.0" layoutY="702.0" mnemonicParsing="false" onMouseClicked="#selectDateTime" text="Attend Event!">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Label layoutX="29.0" layoutY="560.0" text="Choose Date:">
+               <font>
+                  <Font size="29.0" />
+               </font>
+            </Label>
+            <ChoiceBox fx:id="datePicker" layoutX="58.0" layoutY="611.0" prefWidth="150.0" />
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>
