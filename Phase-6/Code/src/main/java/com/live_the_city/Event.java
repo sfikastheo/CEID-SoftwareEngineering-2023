@@ -1,6 +1,7 @@
 package com.live_the_city;
 
 import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 
 public class Event {
@@ -14,13 +15,13 @@ public class Event {
 	private List<String> tags;
 	private Planner_type planner;
 	private String description;
-	private LocalDateTime date_of_event;
+	private Date date_of_event;
 	private String location;
 	private float rating;
 	private int attends;
 
 	public Event(int id, String title, List<String> tags, Planner_type planner, String description,
-			LocalDateTime date_of_event, String location, float rating, int attends) {
+			Date date_of_event, String location, float rating, int attends) {
 		this.id = id;
 		this.title = title;
 		this.tags = tags;
@@ -73,11 +74,11 @@ public class Event {
 		this.description = description;
 	}
 
-	public LocalDateTime getDate_of_event() {
+	public Date getDate_of_event() {
 		return this.date_of_event;
 	}
 
-	public void setDate_of_event(LocalDateTime date_of_event) {
+	public void setDate_of_event(Date date_of_event) {
 		this.date_of_event = date_of_event;
 	}
 

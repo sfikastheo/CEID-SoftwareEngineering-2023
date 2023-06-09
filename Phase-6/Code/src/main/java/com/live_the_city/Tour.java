@@ -59,6 +59,10 @@ public class Tour {
         this.rating = rate;
     }
 
+    public void updateStats(int n){
+        times_bought = times_bought+n;
+    }
+
     public void store(){
         try {
             //store object in DB
