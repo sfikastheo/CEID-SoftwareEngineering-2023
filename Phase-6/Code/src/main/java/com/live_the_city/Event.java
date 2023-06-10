@@ -16,6 +16,8 @@ public class Event {
 	private Planner_type planner;
 	private String description;
 	private Date date_of_event;
+	private String date_uploaded;
+	private String date_of_event_string;
 	private String location;
 	private float rating;
 	private int attends;
@@ -33,6 +35,15 @@ public class Event {
 		this.attends = attends;
 	}
 
+	public Event(int id, String title, String description, String date_uploaded, 
+			String date_of_event_string, float rating) {
+		this.id = id;
+		this.title = title;
+		this.description = description;
+		this.date_uploaded = date_uploaded;
+		this.date_of_event_string = date_of_event_string;
+		this.rating = rating;
+	}
 
 	public int getId() {
 		return this.id;
