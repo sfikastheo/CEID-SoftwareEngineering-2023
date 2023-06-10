@@ -1,12 +1,6 @@
 package com.live_the_city;
 
 import java.io.IOException;
-import java.net.URL;
-import java.time.LocalDate;
-import java.time.LocalTime;
-import java.util.Collections;
-import java.util.List;
-import java.util.ResourceBundle;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
@@ -20,87 +14,134 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import javafx.scene.control.TitledPane;
-import javafx.scene.text.Text;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
 public class NewEventController {
-	
+
 	//-----------------FXML variables-----------------
 	@FXML
-	private TitledPane newEvent_PostEventView_pane;
+	private AnchorPane new_Event_View;
 	@FXML
-	private Button newEvent_postEvent_button;
+	private AnchorPane post_View;
 	@FXML
-	private Button newEvent_declineEvent_button;
+	private AnchorPane tag_Select_View;
 	@FXML
-	private TitledPane newEvent_tagSelectview_pane;
+	private ChoiceBox<String> tagSelect_choicebox;
 	@FXML
-	private ChoiceBox<String> newEvent_tagSelect_choicebox;
+	private TextField title_field;
 	@FXML
-	private Button newEvent_continue2_button;
+	private TextField eventLocation_field;
+	@FXML
+	private TextArea desc_field;
 	@FXML 
-	private TitledPane newEvent_info_pane;
+	private TextArea dates_field;
 	@FXML
-	private TextField newEvent_title_field;
+	private Button next2_button;
 	@FXML
-	private TextArea newEvent_desc_field;
-	@FXML 
-	private TextArea newEvent_dates_field;
+	private Button next1_button;
 	@FXML
-	private TextField newEvent_hour_field;
+	private Button postEvent_button;
 	@FXML
-	private Button newEvent_continue1_button;
+	private Button declineEvent_button;
 	@FXML
-	private Label newEvent_ErrorMessage_Label;
+	private Label ErrorMessage_Label;
 
 	//-----------------General variables-----------------
 	private String selectedTags = "";
+	private int state = 0;
 
 
-	//-----------------FXML methods-----------------
 	@FXML
 	void initialize() {
 		// Set visibility of the panes
-		//newEvent_CreateEvent_pane.setVisible(true);
-		newEvent_info_pane.setVisible(true);
-		newEvent_PostEventView_pane.setVisible(false);
-		newEvent_tagSelectview_pane.setVisible(false);
-	}
+		post_View.setVisible(false);
+		tag_Select_View.setVisible(false);
+		new_Event_View.setVisible(true);
 
-	@FXML
-	void newEvent_continue1_button_clicked(){
-		// Set visibility of the panes
-		newEvent_tagSelectview_pane.setVisible(true);
-		// load the tags
+		// Load the tags into the choicebox
 		load_tags();
 	}
 
 	@FXML
-	void newEvent_continue2_button_clicked(){
-		// Set visibility of the panes
-		newEvent_PostEventView_pane.setVisible(true);
-		newEvent_tagSelectview_pane.setVisible(false);
-		apply_tags();
-		validate_form();
-	}
+	void show() throws IOException{
+		state++;
 
-	@FXML
-	void newEvent_newEvent_declineEvent_button_clicked(){
-		// Go back to the Event History view
-	}
+		switch(state){
+			case 1:
+				// Show the tag select view
+				new_Event_View.setVisible(false);
+				tag_Select_View.setVisible(true);
+				break;
+			case 2:
+				apply_tags();
 
+				// Validate the form
+				validate_form();
+				break;
+			case 3:
+				// Go back to the Event History view
+				App.scene = new Scene(App.loadFXML("EventsHistoryView"));
+        		Stage secondaryStage = new Stage();
+        		secondaryStage.setScene(App.scene);
+        		secondaryStage.show();
+
+        		Stage currentstage = (Stage) postEvent_button.getScene().getWindow();
+        		currentstage.close();
+				break;
+		}
+	}
+		
 	@FXML
-	void newEvent_postEvent_button_clicked(){
+	void post(){
 		// Post the event to the database
-		// Go back to the Event History view
+		Event myevent = create_event();
+		// Store the event in the database
+		// store(myevent);
 
+		// Go back to the Event History view
+		try {
+			show();
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+	}
+
+	public Event create_event(){
+		// Create a new event
+		// Get the text from the text fields
+		String title = title_field.getText();
+		String desc = desc_field.getText();
+		String dates = dates_field.getText();
+		String location = eventLocation_field.getText(); 
+
+		// Create a new event object
+		Event event = new Event(1,title, desc, dates, location, 1); //dummy id
+		return event;
+	}
+
+	public void store(Event event){
+		// Store the event in the database
+		
+		String query = "INSERT INTO events (title, description, location) VALUES ('"+event.getTitle()+"', '"+event.getDescription()+"', '"+event.getLocation()+"')";
+		try{
+			Statement stmt = DBcommunicator.getConnection().createStatement();
+			stmt.executeUpdate(query);
+		}catch(Exception e){
+			System.out.println(e);
+		}
 	}
 
 	public void apply_tags(){
 		// Get the selected tags into a list
-		selectedTags = newEvent_tagSelect_choicebox.getValue();
+		selectedTags = tagSelect_choicebox.getValue();
+	}
+
+	public void Show_message(){
+		// Display an error message	
+		ErrorMessage_Label.setText("Please fill all the fields");
+		LabelClearTextTransition(ErrorMessage_Label);
 	}
 
 	public void validate_form(){
@@ -109,20 +150,25 @@ public class NewEventController {
 		// else display post event view
 
 		// Get the text from the text fields
-		String title = newEvent_title_field.getText();
-		String desc = newEvent_desc_field.getText();
-		String dates = newEvent_dates_field.getText();
-		String hour = newEvent_hour_field.getText();
+		String title = title_field.getText();
+		String desc = desc_field.getText();
+		String dates = dates_field.getText();
+		String location = eventLocation_field.getText(); 
 
 		// Check if the text fields are empty
-		if (title.isEmpty() || desc.isEmpty() || dates.isEmpty() || hour.isEmpty()){
+		if (title.isEmpty() || desc.isEmpty() || dates.isEmpty() || location.isEmpty()){
 			// Display error message
-			newEvent_ErrorMessage_Label.setText("Please fill all the fields");
-			LabelClearTextTransition(newEvent_ErrorMessage_Label);
+			Show_message();
+			
+			// Return to the previous view
+			state--;
+			tag_Select_View.setVisible(false);
+			new_Event_View.setVisible(true);
 		}else{
 			// Display post event view
-			newEvent_tagSelectview_pane.setVisible(false);
-			newEvent_PostEventView_pane.setVisible(true);
+			new_Event_View.setVisible(false);
+			tag_Select_View.setVisible(false);
+			post_View.setVisible(true);
 		}
 	}
 
@@ -143,7 +189,7 @@ public class NewEventController {
 		}
 		
 		// Initialize the choice box
-		newEvent_tagSelect_choicebox.setItems(tagnames);
+		tagSelect_choicebox.setItems(tagnames);
 	}
 
 	public void LabelClearTextTransition(Label errorLabel){

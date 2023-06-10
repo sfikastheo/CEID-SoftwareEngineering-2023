@@ -122,5 +122,27 @@ public class HomePageController {
 
     }
 
+	@FXML
+	void createEvent_useCase(ActionEvent event) throws IOException {
+		App.scene = new Scene(App.loadFXML("EventsHistoryView"));
+		Stage secondaryStage = new Stage();
+		secondaryStage.setScene(App.scene);
+		secondaryStage.show();
+
+		Stage currentstage = (Stage) createEvent_Button.getScene().getWindow();
+		currentstage.close();
+	}
+
+	@FXML
+	void createVirtualTour_useCase(ActionEvent event) throws IOException {
+		App.scene = new Scene(App.loadFXML("VirtualToursView"));
+		Stage secondaryStage = new Stage();
+		secondaryStage.setScene(App.scene);
+		secondaryStage.show();
+
+		Stage currentstage = (Stage) createVirtualTour_Button.getScene().getWindow();
+		currentstage.close();
+	}
+	
 }
 

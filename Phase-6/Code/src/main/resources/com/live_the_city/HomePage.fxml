@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.live_the_city.HomePageController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.live_the_city.HomePageController">
    <children>
       <ImageView fitHeight="805.0" fitWidth="1282.0" layoutX="-1.0">
          <image>
@@ -36,7 +36,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button fx:id="createEvent_Button" contentDisplay="TOP" layoutX="451.0" layoutY="337.0" mnemonicParsing="false" prefHeight="99.0" prefWidth="186.0" text="Create Event">
+      <Button fx:id="createEvent_Button" contentDisplay="TOP" layoutX="451.0" layoutY="337.0" mnemonicParsing="false" onAction="#createEvent_useCase" prefHeight="99.0" prefWidth="186.0" text="Create Event">
          <font>
             <Font size="20.0" />
          </font>
@@ -108,7 +108,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button fx:id="createVirtualTour_Button" layoutX="845.0" layoutY="455.0" mnemonicParsing="false" prefHeight="99.0" prefWidth="186.0" text="Create Virtual Tour" textAlignment="CENTER" wrapText="true">
+      <Button fx:id="createVirtualTour_Button" layoutX="845.0" layoutY="455.0" mnemonicParsing="false" onAction="#createVirtualTour_useCase" prefHeight="99.0" prefWidth="186.0" text="Create Virtual Tour" textAlignment="CENTER" wrapText="true">
          <font>
             <Font size="20.0" />
          </font>

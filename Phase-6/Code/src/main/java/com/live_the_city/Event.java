@@ -1,6 +1,5 @@
 package com.live_the_city;
 
-import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 
@@ -115,6 +114,22 @@ public class Event {
 
 	public void setAttends(int attends) {
 		this.attends = attends;
+	}
+
+	public String getDate_uploaded() {
+		return this.date_uploaded;
+	}
+
+	public void setDate_uploaded(String date_uploaded) {
+		this.date_uploaded = date_uploaded;
+	}
+
+	public String getDate_of_event_string() {
+		return this.date_of_event_string;
+	}
+
+	public void setDate_of_event_string(String date_of_event_string) {
+		this.date_of_event_string = date_of_event_string;
 	}
 
 }

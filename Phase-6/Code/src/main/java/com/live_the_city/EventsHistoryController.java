@@ -81,9 +81,9 @@ public class EventsHistoryController {
     }
 
     @FXML
-    void createEvent() throws IOException{
+    void show() throws IOException{
         //show NewTour Window
-        App.scene = new Scene(App.loadFXML("NewEventController"));
+        App.scene = new Scene(App.loadFXML("newEventView"));
         Stage secondaryStage = new Stage();
         secondaryStage.setScene(App.scene);
         secondaryStage.show();
