@@ -128,17 +128,20 @@ DROP TABLE IF EXISTS `jobapplication`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `jobapplication` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `responding_to` int(11) DEFAULT NULL,
+  `responding_to` int(11) NOT NULL,
   `applicant` int(11) NOT NULL,
+  `fullname` varchar(60) DEFAULT NULL,
+  `phone` varchar(20) DEFAULT NULL,
+  `email` varchar(60) DEFAULT NULL,
+  `message` varchar(255) DEFAULT NULL,
   `apply_date` datetime DEFAULT current_timestamp(),
   `status` enum('Sent','Pending','Accepted','Denied') DEFAULT NULL,
-  `files_path` varchar(250) DEFAULT NULL,
+  `file_path` varchar(250) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `fk_application_offer` (`responding_to`),
-  KEY `fk_JApp_SimUser` (`applicant`),
-  CONSTRAINT `fk_JApp_SimUser` FOREIGN KEY (`applicant`) REFERENCES `simpleuser` (`suid`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `fk_JApp_TourGuide` FOREIGN KEY (`applicant`) REFERENCES `tourguide` (`tgid`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `fk_application_offer` FOREIGN KEY (`responding_to`) REFERENCES `joboffer` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+  KEY `fk_JApp_User` (`applicant`),
+  KEY `fk_JApp_JOffer` (`responding_to`),
+  CONSTRAINT `fk_JApp_JOffer` FOREIGN KEY (`responding_to`) REFERENCES `joboffer` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `fk_JApp_User` FOREIGN KEY (`applicant`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -572,4 +575,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-06-09 20:17:18
+-- Dump completed on 2023-06-11 15:57:11
