@@ -72,7 +72,7 @@ public class JobApplicationController {
             System.out.println(selectedOffer);
             createApplication();
         
-            String query = "INSERT INTO JobApplication(id, responding_to, applicant, fullname, phone, email, message, apply_date, status, file_path) VALUES(null,'" + this.selectedOffer.getId() + "','" + this.applicant.getId() + "','" + fullname + "','" + phone + "','" + email + "','" + message + "',now(), 'Sent','" + filePath + "')";
+            String query = "INSERT INTO jobapplication(id, responding_to, applicant, fullname, phone, email, message, apply_date, status, file_path) VALUES(null,'" + this.selectedOffer.getId() + "','" + this.applicant.getId() + "','" + fullname + "','" + phone + "','" + email + "','" + message + "',now(), 'Sent','" + filePath + "')";
             System.out.println(query);
             Statement statement = DBcommunicator.getConnection().createStatement();
             statement.execute(query);

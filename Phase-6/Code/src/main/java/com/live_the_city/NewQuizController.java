@@ -194,7 +194,7 @@ public class NewQuizController implements Initializable {
     void submitQuiz(ActionEvent event) {
         
         try{
-            String query = "INSERT INTO Quiz(qid, title, on_tour, descr, date_uploaded) VALUES(null,'"+this.quiz.getTitle()+"','"+ selectedTour.getId()+"','"+this.quiz.getDescription()+"', now())";
+            String query = "INSERT INTO quiz(qid, title, on_tour, descr, date_uploaded) VALUES(null,'"+this.quiz.getTitle()+"','"+ selectedTour.getId()+"','"+this.quiz.getDescription()+"', now())";
             //String query = "INSERT INTO Quiz(qid, title, descr, date_uploaded) VALUES(null,'"+this.quiz.getTitle()+"','"+this.quiz.getDescription()+"', now())";
             Statement statement = DBcommunicator.getConnection().createStatement();
             statement.execute(query);
@@ -202,14 +202,14 @@ public class NewQuizController implements Initializable {
             System.out.println("Your Quiz is saved in the database");
 
         
-            query = "SELECT qid FROM Quiz WHERE title = '"+this.quiz.getTitle()+"'";
+            query = "SELECT qid FROM quiz WHERE title = '"+this.quiz.getTitle()+"'";
             ResultSet rs = statement.executeQuery(query);
             while(rs.next()){
             int quizId = rs.getInt("qid");
             
             System.out.println(quizId);
             for(int i=0; i<questions.size(); i++) {
-            query = "INSERT INTO QuizQuestion(id, qtext, answer, on_quiz, qpath) VALUES(null,'"+questions.get(i).getQuestion()+"','"+questions.get(i).getAnswer()+"','"+quizId+"','"+ questions.get(i).getFile_path()+"')";
+            query = "INSERT INTO quizQuestion(id, qtext, answer, on_quiz, qpath) VALUES(null,'"+questions.get(i).getQuestion()+"','"+questions.get(i).getAnswer()+"','"+quizId+"','"+ questions.get(i).getFile_path()+"')";
             statement.execute(query);
             System.out.println("The Quiz question "+ i +" is saved in the database");
              }
