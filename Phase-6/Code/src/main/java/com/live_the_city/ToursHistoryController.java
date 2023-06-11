@@ -69,6 +69,8 @@ public class ToursHistoryController {
 
     @FXML
     private Button okBtn;
+	@FXML
+    private Button create_VtourBtn;
 
     private ArrayList<Text> texts = new ArrayList<>();
     private ArrayList<RadioButton> trueBtns = new ArrayList<>();
@@ -186,6 +188,19 @@ public class ToursHistoryController {
         Stage currentstage = (Stage) newTour_Button.getScene().getWindow();
         currentstage.close();
     }
+
+	@FXML
+	void newVirtualTour() throws IOException{
+		//show NewTour Window
+        App.scene = new Scene(App.loadFXML("newVirtualTourView"));
+        Stage secondaryStage = new Stage();
+        secondaryStage.setScene(App.scene);
+        secondaryStage.show();
+
+        //close current window
+        Stage currentstage = (Stage) newTour_Button.getScene().getWindow();
+        currentstage.close();
+	}
 
     @FXML   //extra functionality, out of use case
     void back2home() throws IOException{

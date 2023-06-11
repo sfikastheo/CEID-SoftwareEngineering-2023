@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.live_the_city.NewVirtualTourController">
+   <children>
+      <ImageView fitHeight="690.0" fitWidth="1024.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@background.jpg" />
+         </image>
+      </ImageView>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="1024.0">
+         <children>
+            <Label fx:id="ErrorMessage_Label" textFill="RED" AnchorPane.bottomAnchor="640.0" AnchorPane.leftAnchor="600.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <Label text="Create your new Virtual Tour!" textAlignment="CENTER" AnchorPane.bottomAnchor="640.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="600.0" AnchorPane.topAnchor="0.0">
+               <font>
+                  <Font name="Noto Serif Display Black" size="25.0" />
+               </font>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+            </Label>
+            <AnchorPane fx:id="new_VirtualTour_View" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
+               <children>
+                  <Label layoutX="64.0" layoutY="47.0" prefHeight="36.0" prefWidth="544.0" text="Add Tours's information:" textAlignment="CENTER" AnchorPane.bottomAnchor="550.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="420.0" AnchorPane.topAnchor="40.0">
+                     <font>
+                        <Font name="Noto Serif Display Black" size="22.0" />
+                     </font>
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding>
+                  </Label>
+                  <TextArea fx:id="desc_field" layoutX="64.0" layoutY="178.0" prefHeight="110.0" prefWidth="544.0" promptText="Input Virtual Tour Description" wrapText="true" AnchorPane.bottomAnchor="350.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="420.0" AnchorPane.topAnchor="170.0" />
+                  <TextArea fx:id="dates_field" layoutX="60.0" layoutY="344.0" prefHeight="110.0" prefWidth="267.0" promptText="Input Available Dates and Hours" wrapText="true" AnchorPane.bottomAnchor="160.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="700.0" AnchorPane.topAnchor="360.0" />
+                  <TextField fx:id="title_field" layoutX="60.0" layoutY="101.0" promptText="Input Virtual Tour Title" AnchorPane.bottomAnchor="500.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="600.0" AnchorPane.topAnchor="100.0" />
+                  <TextField fx:id="teamSize_field" layoutX="362.0" layoutY="360.0" promptText="Input valid Teams Size" AnchorPane.bottomAnchor="240.0" AnchorPane.leftAnchor="360.0" AnchorPane.rightAnchor="420.0" AnchorPane.topAnchor="360.0" />
+                  <Button fx:id="next1_button" layoutX="365.0" layoutY="438.0" mnemonicParsing="false" onAction="#show" prefHeight="26.0" prefWidth="138.0" text="Add Tags" AnchorPane.bottomAnchor="160.0" AnchorPane.leftAnchor="360.0" AnchorPane.rightAnchor="420.0" AnchorPane.topAnchor="430.0" />
+                  <TextField fx:id="bankAccount_field" layoutX="360.0" layoutY="315.0" prefHeight="26.0" prefWidth="244.0" promptText="Input your Bank Account" />
+                  <TextField fx:id="cost_field" layoutX="60.0" layoutY="315.0" prefHeight="26.0" prefWidth="264.0" promptText="Input Tour Cost" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="tag_Select_View" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
+               <children>
+                  <Label layoutX="100.0" layoutY="101.0" prefHeight="40.0" prefWidth="324.0" text="Add Associated Tags:" textAlignment="CENTER" AnchorPane.bottomAnchor="490.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="600.0" AnchorPane.topAnchor="101.0">
+                     <font>
+                        <Font name="Noto Serif Display Black" size="22.0" />
+                     </font>
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding>
+                  </Label>
+                  <ChoiceBox fx:id="tagSelect_choicebox" prefHeight="46.0" prefWidth="324.0" AnchorPane.bottomAnchor="420.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="600.0" AnchorPane.topAnchor="160.0" />
+                  <Button fx:id="next2_button" layoutX="100.0" layoutY="477.0" mnemonicParsing="false" onAction="#show" prefHeight="40.0" prefWidth="324.0" text="Continue To Next Step" AnchorPane.bottomAnchor="110.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="600.0" AnchorPane.topAnchor="480.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="template_Select_View" prefHeight="200.0" prefWidth="200.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
+               <children>
+                  <Label layoutX="63.0" layoutY="119.0" prefHeight="40.0" prefWidth="411.0" text="Choose Wanted Template:" textAlignment="CENTER" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="550.0" AnchorPane.topAnchor="120.0">
+                     <font>
+                        <Font name="Noto Serif Display Black" size="22.0" />
+                     </font>
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding>
+                  </Label>
+                  <ChoiceBox fx:id="templateSelect_choicebox" layoutX="106.0" layoutY="193.0" prefHeight="46.0" prefWidth="324.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="600.0" AnchorPane.topAnchor="190.0" />
+                  <Button fx:id="next3_button" mnemonicParsing="false" onAction="#show" prefHeight="40.0" prefWidth="324.0" text="Continue To Next Step" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="600.0" AnchorPane.topAnchor="450.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="alter_VirtualTour_View" prefHeight="200.0" prefWidth="200.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
+               <children>
+                  <Button fx:id="next4_button" layoutX="20.0" layoutY="548.0" mnemonicParsing="false" onAction="#show" prefHeight="40.0" prefWidth="174.0" text="Continue To Next Step" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="250.0" AnchorPane.topAnchor="550.0" />
+                  <TextArea fx:id="tourInfo_field" prefHeight="200.0" prefWidth="200.0" promptText="Create The virtual Tour Text" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="600.0" AnchorPane.topAnchor="50.0" />
+                  <Button fx:id="file_button" layoutX="250.0" layoutY="554.0" mnemonicParsing="false" onAction="#check_media_size" prefHeight="40.0" prefWidth="174.0" text="Upload Multimedia File" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="550.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="post_View" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
+               <children>
+                  <Button fx:id="postTour_button" layoutX="143.0" layoutY="191.0" mnemonicParsing="false" onAction="#post" prefHeight="67.0" prefWidth="314.0" text="Accept Virtual Tour" AnchorPane.bottomAnchor="400.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="650.0" AnchorPane.topAnchor="190.0" />
+                  <Button fx:id="declineTour_button" mnemonicParsing="false" onAction="#show" prefHeight="56.0" prefWidth="306.0" text="Decline Event" AnchorPane.bottomAnchor="240.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="650.0" AnchorPane.topAnchor="350.0" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

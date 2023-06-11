@@ -15,7 +15,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="804.0" prefWidth="1283.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.live_the_city.ToursHistoryController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="804.0" prefWidth="1283.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.live_the_city.ToursHistoryController">
    <children>
       <AnchorPane fx:id="ToursHistoryView" prefHeight="796.0" prefWidth="1279.0">
          <children>
@@ -70,6 +70,15 @@
                      </graphic>
                   </Button>
                   <Button fx:id="quiztourConnBtn" disable="true" layoutX="-26.0" layoutY="647.0" mnemonicParsing="false" onAction="#quizTourConnection" prefHeight="48.0" prefWidth="202.0" text="Connect Quiz with Tour" visible="false" />
+                  <Button fx:id="create_VtourBtn" contentDisplay="GRAPHIC_ONLY" layoutX="934.0" layoutY="624.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#newVirtualTour" prefHeight="74.0" prefWidth="86.0" text="Button">
+                     <graphic>
+                        <ImageView fitHeight="64.0" fitWidth="64.0">
+                           <image>
+                              <Image url="@icons/new_item.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
                </children>
             </AnchorPane>
          </children>

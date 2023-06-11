@@ -80,6 +80,13 @@ public class Tour {
         this.rating = rate;
     }
 
+	public Tour(String title, String description, float price, int spots_per_group) {
+		this.title = title;
+		this.description = description;
+		this.price = price;
+		this.spots_per_group = spots_per_group;
+	}
+	
     public void updateStats(int n){
         times_bought = times_bought+n;
     }

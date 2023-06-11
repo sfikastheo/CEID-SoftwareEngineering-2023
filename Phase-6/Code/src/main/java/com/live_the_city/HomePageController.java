@@ -75,6 +75,19 @@ public class HomePageController {
         currentstage.close();
     }
 
+	@FXML
+	void createVirtualTour_useCase(ActionEvent event) throws IOException {
+		//show NewTour Window
+        App.scene = new Scene(App.loadFXML("newVirtualTourView"));
+        Stage secondaryStage = new Stage();
+        secondaryStage.setScene(App.scene);
+        secondaryStage.show();
+
+        //close current window
+        Stage currentstage = (Stage) createTour_Button.getScene().getWindow();
+        currentstage.close();
+	}
+
     @FXML
     void JobOfferUseCase(ActionEvent event) throws IOException{
         App.scene = new Scene(App.loadFXML("MyJobOffers"));
@@ -132,17 +145,5 @@ public class HomePageController {
 		Stage currentstage = (Stage) createEvent_Button.getScene().getWindow();
 		currentstage.close();
 	}
-
-	@FXML
-	void createVirtualTour_useCase(ActionEvent event) throws IOException {
-		App.scene = new Scene(App.loadFXML("VirtualToursView"));
-		Stage secondaryStage = new Stage();
-		secondaryStage.setScene(App.scene);
-		secondaryStage.show();
-
-		Stage currentstage = (Stage) createVirtualTour_Button.getScene().getWindow();
-		currentstage.close();
-	}
-	
 }
 

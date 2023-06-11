@@ -98,7 +98,7 @@ public class NewEventController {
 		// Post the event to the database
 		Event myevent = create_event();
 		// Store the event in the database
-		// store(myevent);
+		store(myevent);
 
 		// Go back to the Event History view
 		try {
@@ -125,12 +125,12 @@ public class NewEventController {
 		// Store the event in the database
 		
 		String query = "INSERT INTO events (title, description, location) VALUES ('"+event.getTitle()+"', '"+event.getDescription()+"', '"+event.getLocation()+"')";
-		try{
-			Statement stmt = DBcommunicator.getConnection().createStatement();
-			stmt.executeUpdate(query);
-		}catch(Exception e){
-			System.out.println(e);
-		}
+		// try{
+		// 	Statement stmt = DBcommunicator.getConnection().createStatement();
+		// 	stmt.executeUpdate(query);
+		// }catch(Exception e){
+		// 	System.out.println(e);
+		// }
 	}
 
 	public void apply_tags(){
