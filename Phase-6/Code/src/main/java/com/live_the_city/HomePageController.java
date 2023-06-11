@@ -11,6 +11,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 public class HomePageController {
@@ -145,5 +146,27 @@ public class HomePageController {
 		Stage currentstage = (Stage) createEvent_Button.getScene().getWindow();
 		currentstage.close();
 	}
+
+    @FXML
+    void joinTour_useCase(MouseEvent event) throws IOException {
+        App.scene = new Scene(App.loadFXML("tours"));
+		Stage secondaryStage = new Stage();
+		secondaryStage.setScene(App.scene);
+		secondaryStage.show();
+
+		Stage currentstage = (Stage) createEvent_Button.getScene().getWindow();
+		currentstage.close();
+    }
+
+    @FXML
+    void joinEvent_useCase(MouseEvent event) throws IOException {
+        App.scene = new Scene(App.loadFXML("events"));
+		Stage secondaryStage = new Stage();
+		secondaryStage.setScene(App.scene);
+		secondaryStage.show();
+
+		Stage currentstage = (Stage) createEvent_Button.getScene().getWindow();
+		currentstage.close();
+    }
 }
 
