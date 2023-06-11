@@ -557,7 +557,7 @@ public class NewTourController {
     //--------------NON FXML METHODS--------------//
     private void loadTags(){
     ObservableList<String> tagnames = FXCollections.observableArrayList();
-    String getTags = "Select tagname from Tags;"; 
+    String getTags = "Select tagname from tags;"; 
     try{
         Statement statement = DBcommunicator.getConnection().createStatement();
         ResultSet tagsSet = statement.executeQuery(getTags);

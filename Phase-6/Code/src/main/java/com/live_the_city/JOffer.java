@@ -92,7 +92,7 @@ public class JOffer {
 
             //store tags for Joffer
             for (int i=0; i<this.tags.size(); i++){
-                String query = "insert into JOtags values(NULL,"+this.getId()+",?);";
+                String query = "insert into jotags values(NULL,"+this.getId()+",?);";
                 pstm = DBcommunicator.getConnection().prepareStatement(query);
 
                 idquery = "select id from tags where tagname=\""+tags.get(i)+"\";";
