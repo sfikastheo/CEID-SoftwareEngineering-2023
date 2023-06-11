@@ -122,7 +122,7 @@ public class JOffersListController {
         Statement statement;
         statement = DBcommunicator.getConnection().createStatement();
        
-        String query = "SELECT Host.hname, JobOffer.id, JobOffer.title, JobOffer.descr FROM JobOffer INNER JOIN Host ON JobOffer.employer = Host.hid";
+        String query = "SELECT host.hname, joboffer.id, joboffer.title, joboffer.descr FROM joboffer INNER JOIN host ON joboffer.employer = host.hid";
         statement.executeQuery(query);
         ResultSet rs = statement.getResultSet();
 
