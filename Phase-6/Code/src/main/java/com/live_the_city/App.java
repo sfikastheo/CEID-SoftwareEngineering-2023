@@ -13,8 +13,8 @@ import java.io.IOException;
  * JavaFX App
  */
 public class App extends Application {
-    public static String current_user = "Triada";
-    public static String current_type = "Host";
+    public static String current_user = "Maria";
+    public static String current_type = "TourGuide";
     public static Scene scene;
 
     public static DBcommunicator currentConnection = new DBcommunicator();

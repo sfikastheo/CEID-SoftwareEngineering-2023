@@ -233,6 +233,7 @@ public class ToursHistoryController {
         Back_Button.setVisible(false);
         newTour_Button.setVisible(false);
         quiztourConnBtn.setVisible(true);
+        create_VtourBtn.setVisible(false);
     } //hides buttons when TourHistoryView is used for quiz-tour connection
 
     public void displayQuizTitle(String title) {
